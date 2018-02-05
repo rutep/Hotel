@@ -1,6 +1,6 @@
 package hotelApp;
-
 import java.awt.EventQueue;
+
 
 import javax.swing.JFrame;
 import java.awt.Color;
@@ -37,7 +37,7 @@ public class hotelFrame {
 		initialize();
 	}
 
-	/**
+	/** 
 	 * Initialize the contents of the frame.
 	 */
 	private void initialize() {
@@ -54,6 +54,14 @@ public class hotelFrame {
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println(searchField.getText());
+				searchField.setText("");
+				dbHandler db = new dbHandler();
+				try {
+					db.dbTest();
+				} catch (ClassNotFoundException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 			}
 		});
 		searchButton.setBounds(353, 245, 89, 34);
