@@ -1,4 +1,4 @@
 # Install 
-    - windowBuilder
+    * windowBuilder
     - SWT
-    - Swing
+    + Swing
