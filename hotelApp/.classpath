@@ -6,7 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="C:/Users/Pétur PC/Desktop/Hotel/mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Pétur PC/Desktop/Hotel/hotelApp/bin/lib/sqlite-jdbc-3.21.0.jar"/>
+	<classpathentry kind="lib" path="C:/Users/urrpu/Documents/GitHub/Hotel/mysql-connector-java-5.1.45/mysql-connector-java-5.1.45-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/urrpu/Documents/GitHub/Hotel/hotelApp/src/lib/sqlite-jdbc-3.21.0.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

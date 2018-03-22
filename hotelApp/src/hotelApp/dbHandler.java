@@ -8,6 +8,10 @@ import java.sql.Statement;
 
 public class dbHandler
  {
+	public Hotel[] runQuery(String s)
+	{
+		
+	}
  public void dbTest() throws ClassNotFoundException
   {
    // load the sqlite-JDBC driver using the current class loader
