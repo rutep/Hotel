@@ -4,7 +4,7 @@ public class hotel {
 	
 	//Instance fields
 	private String name;
-	private int ssn;
+	private int hotelId;
 	private String address;
 	private String town;
 	private boolean vegan;
@@ -24,18 +24,18 @@ public class hotel {
 	private double suitePrice;
 	
 	//Constructor ekki kláraður, þarf að spyrja Pétur nánar út í hann
-	//Spurningin er hvort öll instance fara í smið eða ekki?
+	//Spurningin er hvað nákvæmlega þarf í smiðinn, er það meira en nafn
 	public hotel(String n, int i) {
 		name = n;
-		ssn = i;
+		hotelId = i;
 	}
 	
 	public void setName(String n) {
 		name = n;
 	}
 	
-	public void setSsn(int s) {
-		ssn = s;
+	public void setHotelId(int s) {
+		hotelId = s;
 	}
 	
 	public void setAddress(String a) {
@@ -110,8 +110,8 @@ public class hotel {
 		return name;
 	}
 	
-	public int getSsn() {
-		return ssn;
+	public int getHotelId() {
+		return hotelId;
 	}
 	
 	public String getAddress() {
