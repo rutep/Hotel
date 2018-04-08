@@ -10,6 +10,7 @@ import javax.swing.JButton;
 import java.awt.Font;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
+import javax.swing.JCheckBox;
 
 public class Results extends JFrame {
 
@@ -54,9 +55,36 @@ public class Results extends JFrame {
 		contentPane.add(panel);
 		
 		txtFleiriFilterar = new JTextField();
-		txtFleiriFilterar.setText("fleiri filterar");
+		txtFleiriFilterar.setText("fleiri filterar?");
 		panel.add(txtFleiriFilterar);
 		txtFleiriFilterar.setColumns(10);
+		
+		JCheckBox chckbxHandicappedAccess = new JCheckBox("Handicapped Access");
+		panel.add(chckbxHandicappedAccess);
+		
+		JCheckBox chckbxPool = new JCheckBox("Pool");
+		panel.add(chckbxPool);
+		
+		JCheckBox chckbxGym = new JCheckBox("Gym");
+		panel.add(chckbxGym);
+		
+		JCheckBox chckbxVegan = new JCheckBox("Vegan");
+		panel.add(chckbxVegan);
+		
+		JCheckBox chckbxSpa = new JCheckBox("Spa");
+		panel.add(chckbxSpa);
+		
+		JCheckBox chckbxParking = new JCheckBox("Parking");
+		panel.add(chckbxParking);
+		
+		JCheckBox chckbxWifi = new JCheckBox("WiFi");
+		panel.add(chckbxWifi);
+		
+		JCheckBox chckbxBreakfast = new JCheckBox("Breakfast");
+		panel.add(chckbxBreakfast);
+		
+		JCheckBox chckbxPetsAllowed = new JCheckBox("Pets Allowed");
+		panel.add(chckbxPetsAllowed);
 		
 		JPanel panel_1 = new JPanel();
 		panel_1.setBounds(137, 34, 287, 216);
