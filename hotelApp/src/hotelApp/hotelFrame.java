@@ -8,11 +8,15 @@ import javax.swing.JTextField;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JCheckBox;
+import javax.swing.JSlider;
+import javax.swing.JLabel;
 
 public class hotelFrame {
 
 	private JFrame frame;
 	private JTextField searchField;
+	private JTextField textField;
 
 	/**
 	 * Launch the application.
@@ -46,7 +50,7 @@ public class hotelFrame {
 		frame.getContentPane().setLayout(null);
 		
 		searchField = new JTextField();
-		searchField.setBounds(50, 245, 267, 34);
+		searchField.setBounds(85, 61, 267, 34);
 		frame.getContentPane().add(searchField);
 		searchField.setColumns(10);
 		
@@ -64,8 +68,50 @@ public class hotelFrame {
 				}
 			}
 		});
-		searchButton.setBounds(353, 245, 89, 34);
+		searchButton.setBounds(372, 61, 89, 34);
 		frame.getContentPane().add(searchButton);
+		
+		JCheckBox chckbxFreeWifi = new JCheckBox("Free WiFi");
+		chckbxFreeWifi.setBounds(28, 142, 97, 23);
+		frame.getContentPane().add(chckbxFreeWifi);
+		
+		JCheckBox chckbxBreakfast = new JCheckBox("Breakfast");
+		chckbxBreakfast.setBounds(28, 178, 97, 23);
+		frame.getContentPane().add(chckbxBreakfast);
+		
+		JCheckBox chckbxCarPark = new JCheckBox("Car Park");
+		chckbxCarPark.setBounds(28, 217, 97, 23);
+		frame.getContentPane().add(chckbxCarPark);
+		
+		JCheckBox chckbxSingleBed = new JCheckBox("Single Bed");
+		chckbxSingleBed.setBounds(144, 142, 97, 23);
+		frame.getContentPane().add(chckbxSingleBed);
+		
+		JCheckBox chckbxDoubleBed = new JCheckBox("Double Bed");
+		chckbxDoubleBed.setBounds(144, 178, 97, 23);
+		frame.getContentPane().add(chckbxDoubleBed);
+		
+		JCheckBox chckbxGym = new JCheckBox("Gym");
+		chckbxGym.setBounds(144, 217, 97, 23);
+		frame.getContentPane().add(chckbxGym);
+		
+		JSlider slider = new JSlider();
+		slider.setBounds(259, 214, 200, 26);
+		frame.getContentPane().add(slider);
+		
+		JLabel lblMinimumStars = new JLabel("Minimum Stars:");
+		lblMinimumStars.setBounds(310, 182, 97, 21);
+		frame.getContentPane().add(lblMinimumStars);
+		
+		textField = new JTextField();
+		textField.setText("1            2             3              4                5");
+		textField.setBounds(259, 251, 202, 20);
+		frame.getContentPane().add(textField);
+		textField.setColumns(10);
+		
+		JCheckBox chckbxSpa = new JCheckBox("Spa");
+		chckbxSpa.setBounds(255, 142, 97, 23);
+		frame.getContentPane().add(chckbxSpa);
 		frame.setBounds(100, 100, 536, 363);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
