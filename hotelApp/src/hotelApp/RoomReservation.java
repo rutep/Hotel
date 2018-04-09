@@ -7,7 +7,7 @@ public class RoomReservation {
 		return daysBooked();
 	}
 	
-	public string guestBooked() {
+	public String guestBooked() {
 		
 		return guestBooked();
 	}

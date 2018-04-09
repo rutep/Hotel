@@ -1,3 +1,7 @@
+/**
+ * Má ekki henda þessu?
+ */
+
 package hotelApp;
 
 import static org.junit.jupiter.api.Assertions.*;

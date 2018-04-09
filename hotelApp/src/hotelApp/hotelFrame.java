@@ -17,7 +17,8 @@ public class hotelFrame {
 	private JFrame frame;
 	private JTextField searchField;
 	private JTextField textField;
-
+	private Controller controller = new Controller();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -58,16 +59,22 @@ public class hotelFrame {
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println(searchField.getText());
+				// ************* Pétur *********
+				// String leit = searchField.getText();
+				Object[] res = controller.search(new Object[] {searchField.getText()});
+				System.out.println((String)res[0]);
+				// *************
 				searchField.setText("");
-				dbHandler db = new dbHandler();
+				DbManager db = new DbManager();
 				try {
 					db.dbTest();
 				} catch (ClassNotFoundException e) {
-					// TODO Auto-generated catch block
+				 	// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
 		});
+		
 		searchButton.setBounds(372, 61, 89, 34);
 		frame.getContentPane().add(searchButton);
 		
