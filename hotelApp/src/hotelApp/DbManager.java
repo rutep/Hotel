@@ -10,10 +10,8 @@ public class DbManager {
 	public String makeSearchQuery(String s){
 		return "select name from hotel where name like '" + s + "'";
 		}
-	public Object[] runQuery(String s) {
-		return new Object[] {"Hilton"};
-		}
-	public void dbTest() throws ClassNotFoundException {
+	
+	public Object[] runQuery(String s) throws ClassNotFoundException {
 		// load the sqlite-JDBC driver using the current class loader
 		Class.forName("org.sqlite.JDBC");
 		Connection connection = null;
@@ -58,6 +56,7 @@ public class DbManager {
 				System.err.println(e); 
 			}
 		}
+		return new Object[] {"Hilton"};
 	}
 }
 
