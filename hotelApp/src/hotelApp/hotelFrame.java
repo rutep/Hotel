@@ -61,7 +61,7 @@ public class hotelFrame {
 				System.out.println(searchField.getText());
 				// ************* Pétur *********
 				Object[] res = controller.search(new Object[] {searchField.getText()});
-				System.out.println((String)res[0]);
+				System.out.println(((hotel) res[0]).getName());
 				// *************
 				searchField.setText("");
 			}

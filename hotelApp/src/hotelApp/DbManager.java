@@ -5,8 +5,10 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.Vector;
 
 public class DbManager {
+	
 	public String makeSearchQuery(String s){
 		return "select name, ssn from hotel where name like '%" + s + "%'";
 		}
@@ -15,6 +17,7 @@ public class DbManager {
 		// load the sqlite-JDBC driver using the current class loader
 		Class.forName("org.sqlite.JDBC");
 		Connection connection = null;
+		Vector<Object> vec = new Vector<Object>();
 		try
 		{
 			System.out.println(s);
@@ -35,14 +38,16 @@ public class DbManager {
 			 */
 			//statement.executeUpdate("UPDATE person SET name='Peter' WHERE id='1'");
 			//statement.executeUpdate("DELETE FROM person WHERE id='1'");
-
-      
+			
+			
 			ResultSet resultSet = statement.executeQuery(s);
 			while(resultSet.next())
 			{
 				// iterate & read the result set
 				System.out.println("ssn = " + resultSet.getInt("ssn"));
 				System.out.println("name = " + resultSet.getString("name"));
+				hotel res = new hotel(resultSet.getString("name"),resultSet.getInt("ssn"));
+				vec.add(res);
 			}
 		}
 		catch(SQLException e){  System.err.println(e.getMessage()); }       
@@ -55,7 +60,7 @@ public class DbManager {
 				System.err.println(e); 
 			}
 		}
-		return new Object[] {"Hilton"};
+		return vec.toArray();
 	}
 }
 

@@ -26,8 +26,8 @@ public class hotel {
 	//Constructor ekki kláraður, þarf að spyrja Pétur nánar út í hann
 	//Spurningin er hvað nákvæmlega þarf í smiðinn, er það meira en nafn
 	public hotel(String n, int i) {
-		name = n;
-		hotelId = i;
+		this.name = n;
+		this.hotelId = i;
 	}
 	
 	public void setName(String n) {
