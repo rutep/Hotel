@@ -8,7 +8,7 @@ import java.sql.Statement;
 
 public class DbManager {
 	public String makeSearchQuery(String s){
-		return "select name from hotel where name like '" + s + "'";
+		return "select name, ssn from hotel where name like '%" + s + "%'";
 		}
 	
 	public Object[] runQuery(String s) throws ClassNotFoundException {
@@ -17,33 +17,32 @@ public class DbManager {
 		Connection connection = null;
 		try
 		{
+			System.out.println(s);
 			// create a database connection
 			connection = DriverManager.getConnection("jdbc:sqlite:hotelDataBase.db");
 			
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30);  // set timeout to 30 sec.
 			
-			statement.executeUpdate("DROP TABLE IF EXISTS person");
-			statement.executeUpdate("CREATE TABLE person (id INTEGER, name STRING)");
-
-			int ids [] = {1,2,3,4,5};
-      
-			String names [] = {"Peter","Pallar","William","Paul","James Bond"};
-
-
-			for(int i=0;i<ids.length;i++){
-				statement.executeUpdate("INSERT INTO person values(' "+ids[i]+"', '"+names[i]+"')");
-			}
-
-      
+			// statement.executeUpdate("DROP TABLE IF EXISTS person");
+			// statement.executeUpdate("CREATE TABLE person (id INTEGER, name STRING)");
+			// int ids [] = {1,2,3,4,5};
+			// String names [] = {"Peter","Pallar","William","Paul","James Bond"};
+			/**
+	  			for(int i=0;i<ids.length;i++){
+					statement.executeUpdate("INSERT INTO person values(' "+ids[i]+"', '"+names[i]+"')");
+	  			}
+			 */
 			//statement.executeUpdate("UPDATE person SET name='Peter' WHERE id='1'");
 			//statement.executeUpdate("DELETE FROM person WHERE id='1'");
-			ResultSet resultSet = statement.executeQuery("SELECT * from person");
+
+      
+			ResultSet resultSet = statement.executeQuery(s);
 			while(resultSet.next())
 			{
 				// iterate & read the result set
+				System.out.println("ssn = " + resultSet.getInt("ssn"));
 				System.out.println("name = " + resultSet.getString("name"));
-				System.out.println("id = " + resultSet.getInt("id"));
 			}
 		}
 		catch(SQLException e){  System.err.println(e.getMessage()); }       

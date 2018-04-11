@@ -60,19 +60,10 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println(searchField.getText());
 				// ************* Pétur *********
-				// String leit = searchField.getText();
+				Object[] res = controller.search(new Object[] {searchField.getText()});
+				System.out.println((String)res[0]);
 				// *************
 				searchField.setText("");
-				
-				// DbManager db = new DbManager();
-				//try {
-					Object[] res = controller.search(new Object[] {searchField.getText()});
-					System.out.println((String)res[0]);
-					// db.dbTest();
-				// } catch (ClassNotFoundException e) {
-				 	// TODO Auto-generated catch block
-				//	e.printStackTrace();
-				// }
 			}
 		});
 		
