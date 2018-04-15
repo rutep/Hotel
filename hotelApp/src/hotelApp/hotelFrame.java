@@ -19,14 +19,11 @@ import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JList;
-<<<<<<< Updated upstream
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
-=======
 import javax.swing.JScrollPane;
->>>>>>> Stashed changes
 
 public class hotelFrame {
 	
@@ -166,7 +163,7 @@ public class hotelFrame {
 		frame.getContentPane().add(chckbxGym);
 		
 		JSlider slider = new JSlider();
-<<<<<<< Updated upstream
+
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				int x = slider.getValue();
@@ -177,7 +174,7 @@ public class hotelFrame {
 			}
 		});
 		slider.setBounds(261, 100, 200, 26);
-=======
+
 		slider.setMinorTickSpacing(1);
 		slider.setMinimum(1);
 		slider.setMaximum(5);
@@ -185,7 +182,7 @@ public class hotelFrame {
 		slider.setSnapToTicks(true);
 		slider.setMajorTickSpacing(5);
 		slider.setBounds(261, 85, 200, 26);
->>>>>>> Stashed changes
+
 		frame.getContentPane().add(slider);
 		
 		JLabel lblMinimumStars = new JLabel("Minimum Stars:");
@@ -193,13 +190,10 @@ public class hotelFrame {
 		frame.getContentPane().add(lblMinimumStars);
 		
 		textField = new JTextField();
-<<<<<<< Updated upstream
+
 		textField.setText("1            2             3              4                5");
 		textField.setBounds(261, 132, 202, 20);
-=======
-		textField.setText(" 1            2             3              4                5");
-		textField.setBounds(261, 112, 202, 20);
->>>>>>> Stashed changes
+
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
@@ -296,12 +290,6 @@ public class hotelFrame {
 		frame.getContentPane().add(btnStars);
 		
 		
-<<<<<<< Updated upstream
-		DefaultListModel model = new DefaultListModel();
-		JList resultFrame = new JList(model);
-		resultFrame.setBounds(232, 163, 278, 150);
-		frame.getContentPane().add(resultFrame);
-		
 		JLabel lblSortBy = new JLabel("Sort by:");
 		lblSortBy.setBounds(130, 59, 46, 14);
 		frame.getContentPane().add(lblSortBy);
@@ -344,10 +332,9 @@ public class hotelFrame {
 		frame.getContentPane().add(rdbtnSuite);
 		frame.setBounds(100, 100, 536, 363);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-=======
+
 		
 		
 		
->>>>>>> Stashed changes
 	}
 }
