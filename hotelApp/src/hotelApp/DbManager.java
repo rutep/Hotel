@@ -46,7 +46,7 @@ public class DbManager {
 				// iterate & read the result set
 				System.out.println("ssn = " + resultSet.getInt("ssn"));
 				System.out.println("name = " + resultSet.getString("name"));
-				hotel res = new hotel(resultSet.getString("name"),resultSet.getInt("ssn"));
+				Hotel res = new Hotel(resultSet.getString("name"),resultSet.getInt("ssn"));
 				vec.add(res);
 			}
 		}
