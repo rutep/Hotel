@@ -329,9 +329,12 @@ public class hotelFrame {
 		});
 		buttonGroup.add(rdbtnSuite);
 		rdbtnSuite.setBounds(6, 293, 109, 23);
+		
 		frame.getContentPane().add(rdbtnSuite);
 		frame.setBounds(100, 100, 536, 363);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		frame.getRootPane().setDefaultButton(searchButton);
+
 
 		
 		
