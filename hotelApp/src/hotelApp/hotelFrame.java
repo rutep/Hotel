@@ -24,6 +24,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JScrollPane;
+import javax.swing.JComboBox;
 
 public class hotelFrame {
 	
@@ -331,7 +332,14 @@ public class hotelFrame {
 		buttonGroup.add(rdbtnSuite);
 		rdbtnSuite.setBounds(6, 293, 109, 23);
 		frame.getContentPane().add(rdbtnSuite);
+		
+		String[] landshlutaList = {"Select an area", "South Iceland", "Western Iceland","North Iceland","East Iceland", "Reykjavík - Capital area"};
+		
+		JComboBox landshluti = new JComboBox(landshlutaList);
+		landshluti.setBounds(6, 56, 114, 22);
+		frame.getContentPane().add(landshluti);
 		frame.setBounds(100, 100, 536, 363);
+		landshluti.setSelectedIndex(0);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		
