@@ -24,6 +24,7 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JScrollPane;
+import javax.swing.JComboBox;
 
 public class hotelFrame {
 	
@@ -288,7 +289,7 @@ public class hotelFrame {
 		
 		
 		JLabel lblSortBy = new JLabel("Sort by:");
-		lblSortBy.setBounds(130, 59, 46, 14);
+		lblSortBy.setBounds(140, 59, 46, 14);
 		frame.getContentPane().add(lblSortBy);
 		
 		JRadioButton rdbtnSingleBed = new JRadioButton("Single bed");
@@ -327,7 +328,14 @@ public class hotelFrame {
 		buttonGroup.add(rdbtnSuite);
 		rdbtnSuite.setBounds(6, 293, 109, 23);
 		frame.getContentPane().add(rdbtnSuite);
+		
+		String[] landshlutarList = {"Select an area", "South Iceland", "Western Iceland", "North Iceland", "Eastern Iceland", "Reykjavík - Capital area"}; 
+		
+		JComboBox landshluti = new JComboBox(landshlutarList);
+		landshluti.setBounds(10, 55, 120, 22);
+		frame.getContentPane().add(landshluti);
 		frame.setBounds(100, 100, 536, 363);
+		landshluti.setSelectedIndex(0);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
 		
