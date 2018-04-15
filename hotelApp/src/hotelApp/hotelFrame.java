@@ -66,7 +66,7 @@ public class hotelFrame {
 	 */
 	private void initialize() {
 		frame = new JFrame();
-		frame.getContentPane().setBackground(new Color(144, 238, 144));
+		frame.getContentPane().setBackground(new Color(200, 238, 244));
 		frame.getContentPane().setLayout(null);
 		
 		searchField = new JTextField();
