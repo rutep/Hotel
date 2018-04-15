@@ -169,7 +169,7 @@ public class hotelFrame {
 			public void stateChanged(ChangeEvent arg0) {
 				int x = slider.getValue();
 				
-				if(x < 25) {	
+				if(x < 2) {	
 					System.out.println("Ein stjarna valin");
 				}
 			}
@@ -193,7 +193,7 @@ public class hotelFrame {
 		textField = new JTextField();
 
 		textField.setText("1            2             3              4                5");
-		textField.setBounds(261, 132, 202, 20);
+		textField.setBounds(261, 112, 202, 20);
 
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
