@@ -4,6 +4,9 @@ import java.awt.EventQueue;
 
 import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Container;
+import java.awt.Dimension;
+
 import javax.swing.JTextField;
 import javax.management.modelmbean.ModelMBean;
 import javax.swing.DefaultListModel;
@@ -16,10 +19,14 @@ import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JList;
+<<<<<<< Updated upstream
 import javax.swing.event.ChangeListener;
 import javax.swing.event.ChangeEvent;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
+=======
+import javax.swing.JScrollPane;
+>>>>>>> Stashed changes
 
 public class hotelFrame {
 	
@@ -54,17 +61,7 @@ public class hotelFrame {
 		initialize();
 	}
 	
-	/**
-	 * 
-	 * @param object
-	 */
-	public void addRow(Hotel h)
-	{	
-		listModel = new DefaultListModel();
-	    Object[] objects = new Object[]{h.getHotelId(), h.getName()};
-	    DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
-	    tableModel.addRow(objects);
-	}
+
 	
 	/** 
 	 * Initialize the contents of the frame.
@@ -79,6 +76,14 @@ public class hotelFrame {
 		frame.getContentPane().add(searchField);
 		searchField.setColumns(10);
 		
+		DefaultListModel model = new DefaultListModel();
+	    
+	    JScrollPane scrollPane = new JScrollPane();
+	    scrollPane.setBounds(226, 159, 267, 159);
+	    frame.getContentPane().add(scrollPane);
+	    JList resultFrame = new JList(model);
+	    scrollPane.setViewportView(resultFrame);
+		
 		JButton searchButton = new JButton("Search");
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -89,6 +94,9 @@ public class hotelFrame {
 				Object[] res = controller.search(hotel);
 				System.out.println(((Hotel) res[0]).getName());
 				searchField.setText("");
+				// *****************************
+				model.clear();
+				for(int i = 0; i < res.length; i++) model.add(i, ((Hotel)res[i]).getName());
 				// *****************************
 			}
 		});
@@ -158,6 +166,7 @@ public class hotelFrame {
 		frame.getContentPane().add(chckbxGym);
 		
 		JSlider slider = new JSlider();
+<<<<<<< Updated upstream
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				int x = slider.getValue();
@@ -168,6 +177,15 @@ public class hotelFrame {
 			}
 		});
 		slider.setBounds(261, 100, 200, 26);
+=======
+		slider.setMinorTickSpacing(1);
+		slider.setMinimum(1);
+		slider.setMaximum(5);
+		slider.setValue(5);
+		slider.setSnapToTicks(true);
+		slider.setMajorTickSpacing(5);
+		slider.setBounds(261, 85, 200, 26);
+>>>>>>> Stashed changes
 		frame.getContentPane().add(slider);
 		
 		JLabel lblMinimumStars = new JLabel("Minimum Stars:");
@@ -175,8 +193,13 @@ public class hotelFrame {
 		frame.getContentPane().add(lblMinimumStars);
 		
 		textField = new JTextField();
+<<<<<<< Updated upstream
 		textField.setText("1            2             3              4                5");
 		textField.setBounds(261, 132, 202, 20);
+=======
+		textField.setText(" 1            2             3              4                5");
+		textField.setBounds(261, 112, 202, 20);
+>>>>>>> Stashed changes
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
@@ -273,6 +296,7 @@ public class hotelFrame {
 		frame.getContentPane().add(btnStars);
 		
 		
+<<<<<<< Updated upstream
 		DefaultListModel model = new DefaultListModel();
 		JList resultFrame = new JList(model);
 		resultFrame.setBounds(232, 163, 278, 150);
@@ -320,5 +344,10 @@ public class hotelFrame {
 		frame.getContentPane().add(rdbtnSuite);
 		frame.setBounds(100, 100, 536, 363);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+=======
+		
+		
+		
+>>>>>>> Stashed changes
 	}
 }
