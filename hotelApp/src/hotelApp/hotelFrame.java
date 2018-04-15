@@ -5,19 +5,26 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JTextField;
+import javax.management.modelmbean.ModelMBean;
+import javax.swing.DefaultListModel;
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import javax.swing.JCheckBox;
 import javax.swing.JSlider;
 import javax.swing.JLabel;
+import javax.swing.JTabbedPane;
+import javax.swing.JTable;
+import javax.swing.JList;
 
 public class hotelFrame {
-
+	
+	
 	private JFrame frame;
 	private JTextField searchField;
 	private JTextField textField;
 	private Controller controller = new Controller();
+	private JTable table;
 	
 	/**
 	 * Launch the application.
@@ -41,7 +48,19 @@ public class hotelFrame {
 	public hotelFrame() {
 		initialize();
 	}
-
+	
+	/**
+	 * 
+	 * @param object
+	 */
+	public void addRow(Hotel h)
+	{	
+		listModel = new DefaultListModel();
+	    Object[] objects = new Object[]{h.getHotelId(), h.getName()};
+	    DefaultTableModel tableModel = (DefaultTableModel) table.getModel();
+	    tableModel.addRow(objects);
+	}
+	
 	/** 
 	 * Initialize the contents of the frame.
 	 */
@@ -60,10 +79,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				System.out.println(searchField.getText());
 				// ************* Pétur *********
-				Object[] res = controller.search(new Object[] {searchField.getText()});
-				System.out.println(((hotel) res[0]).getName());
-				// *************
+				// Laga nafn á hótel class í Hótel
+				Hotel hotel = new Hotel(searchField.getText());
+				Object[] res = controller.search(hotel);
+				System.out.println(((Hotel) res[0]).getName());
 				searchField.setText("");
+				// *****************************
 			}
 		});
 		
@@ -143,6 +164,12 @@ public class hotelFrame {
 		JButton btnStars = new JButton("Stars");
 		btnStars.setBounds(186, 56, 69, 23);
 		frame.getContentPane().add(btnStars);
+		
+		
+		DefaultListModel model = new DefaultListModel();
+		JList resultFrame = new JList(model);
+		resultFrame.setBounds(232, 163, 278, 150);
+		frame.getContentPane().add(resultFrame);
 		frame.setBounds(100, 100, 536, 363);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}

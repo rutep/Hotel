@@ -2,8 +2,13 @@ package hotelApp;
 
 public class Controller {
 	private HotelManager manager = new HotelManager();
-	public Object[] search(Object[] s) {
-		// test - Object[] lausn = new Object[] {"la"};
-		return manager.searchForHotelInDb(s);
+	/**
+	 * Notkun: controller.search(h)
+	 * Fyrir : h er hótel hlutur sem inniheldur leitar gögn
+	 * @param h
+	 * @return Fylki af hótelum sem uppfylla leitarskylirði
+	 */
+	public Object[] search(Hotel h) {
+		return manager.searchForHotelInDb(h);
 	}	
 }

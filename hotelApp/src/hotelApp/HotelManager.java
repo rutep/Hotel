@@ -3,9 +3,9 @@ package hotelApp;
 public class HotelManager {
 	private DbManager manager = new DbManager();
 	
-	public Object[] searchForHotelInDb(Object[] s) {
+	public Object[] searchForHotelInDb(Hotel h) {
 		try {
-		Object[] res = manager.runQuery(manager.makeSearchQuery((String)s[0]));
+		Object[] res = manager.runQuery(manager.makeSearchQuery(h.getName()));
 		return res;
 		} catch (ClassNotFoundException e) {
 	 	// TODO Auto-generated catch block

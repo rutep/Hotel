@@ -1,6 +1,6 @@
 package hotelApp;
 
-public class hotel {
+public class Hotel {
 	
 	//Instance fields
 	private String name;
@@ -25,9 +25,14 @@ public class hotel {
 	
 	//Constructor ekki kláraður, þarf að spyrja Pétur nánar út í hann
 	//Spurningin er hvað nákvæmlega þarf í smiðinn, er það meira en nafn
-	public hotel(String n, int i) {
+	public Hotel(String n, int i) {
 		this.name = n;
 		this.hotelId = i;
+	}
+	
+	// Dev
+	public Hotel(String n) {
+		this.name = n;
 	}
 	
 	public void setName(String n) {
