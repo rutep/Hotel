@@ -16,9 +16,6 @@ public class Hotel {
 	private int stars;
 	private boolean gym;
 	private boolean carParking;
-	private boolean singleBed;
-	private boolean doubleBed;
-	private boolean hotelSuite;
 	private double singlePrice;
 	private double doublePrice;
 	private double suitePrice;
@@ -87,18 +84,6 @@ public class Hotel {
 		carParking = c;
 	}
 	
-	public void setSingleBed(boolean s) {
-		singleBed = s;
-	}
-	
-	public void setDoubleBed(boolean d) {
-		doubleBed = d;
-	}
-	
-	public void sethotelSuite(boolean suite) {
-		hotelSuite = suite;
-	}
-	
 	public void setSinglePrice(double s) {
 		singlePrice = s;
 	}
@@ -161,18 +146,6 @@ public class Hotel {
 	
 	public boolean getParking() {
 		return carParking;
-	}
-	
-	public boolean getSingleBed() {
-		return singleBed;
-	}
-	
-	public boolean getDoubleBed() {
-		return doubleBed;
-	}
-	
-	public boolean getHotelSuite() {
-		return hotelSuite;
 	}
 	
 	public double getSinglePrice() {
