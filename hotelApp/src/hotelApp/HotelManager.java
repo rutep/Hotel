@@ -5,7 +5,7 @@ public class HotelManager {
 	
 	public Object[] searchForHotelInDb(HotelLeit h) {
 		try {
-		Object[] res = manager.runQuery(manager.makeSearchQuery(h.getName()));
+		Object[] res = manager.runQuery(manager.makeSearchQuery(h));
 		return res;
 		} catch (ClassNotFoundException e) {
 	 	// TODO Auto-generated catch block

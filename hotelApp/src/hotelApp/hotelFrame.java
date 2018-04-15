@@ -24,7 +24,6 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JScrollPane;
-import javax.swing.JComboBox;
 
 public class hotelFrame {
 	
@@ -35,7 +34,6 @@ public class hotelFrame {
 	private Controller controller = new Controller();
 	private JTable table;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
-	private int herbergisTeg;
 	
 	/**
 	 * Launch the application.
@@ -89,7 +87,7 @@ public class hotelFrame {
 				System.out.println(searchField.getText());
 				// ************* Pétur *********
 				// Laga nafn á hótel class í Hótel
-				Hotel hotel = new Hotel(searchField.getText());
+				HotelLeit hotel = new HotelLeit(searchField.getText());
 				Object[] res = controller.search(hotel);
 				System.out.println(((Hotel) res[0]).getName());
 				searchField.setText("");
@@ -169,7 +167,10 @@ public class hotelFrame {
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				int x = slider.getValue();
-				//BÆTA VIÐ KÓÐA
+				
+				if(x < 25) {	
+					System.out.println("Ein stjarna valin");
+				}
 			}
 		});
 		slider.setBounds(261, 100, 200, 26);
@@ -289,8 +290,9 @@ public class hotelFrame {
 		frame.getContentPane().add(btnStars);
 		
 		
+		
 		JLabel lblSortBy = new JLabel("Sort by:");
-		lblSortBy.setBounds(140, 59, 46, 14);
+		lblSortBy.setBounds(130, 59, 46, 14);
 		frame.getContentPane().add(lblSortBy);
 		
 		JRadioButton rdbtnSingleBed = new JRadioButton("Single bed");
@@ -298,7 +300,7 @@ public class hotelFrame {
 		rdbtnSingleBed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSingleBed.isSelected()) {
-					herbergisTeg = 0;
+					//herbergisTeg = 0;
 				}
 			}
 		});
@@ -310,8 +312,7 @@ public class hotelFrame {
 		rdbtnDoubleBed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnDoubleBed.isSelected()) {
-					herbergisTeg = 1;
-					System.out.println(herbergisTeg);
+				//	herbergisTeg = 1;
 				}
 			}
 		});
@@ -323,26 +324,15 @@ public class hotelFrame {
 		rdbtnSuite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSuite.isSelected()) {
-					herbergisTeg = 2;
-					System.out.println(herbergisTeg);
+				//	herbergisTeg = 2;
 				}
 			}
 		});
 		buttonGroup.add(rdbtnSuite);
 		rdbtnSuite.setBounds(6, 293, 109, 23);
-		
 		frame.getContentPane().add(rdbtnSuite);
-		
-		String[] landshlutarList = {"Select an area", "South Iceland", "Western Iceland", "North Iceland", "Eastern Iceland", "Reykjavík - Capital area"}; 
-		
-		JComboBox landshluti = new JComboBox(landshlutarList);
-		landshluti.setBounds(10, 55, 120, 22);
-		frame.getContentPane().add(landshluti);
 		frame.setBounds(100, 100, 536, 363);
-		landshluti.setSelectedIndex(0);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		frame.getRootPane().setDefaultButton(searchButton);
-
 
 		
 		

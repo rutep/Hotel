@@ -11,7 +11,7 @@ public class DbManager {
 	
 	public String makeSearchQuery(HotelLeit s){
 		
-		return "select name, ssn from hotel where name like '%" + s + "%'";
+		return "select name, ssn from hotel where name like '%" + s.getName() + "%'";
 		}
 	
 	public Object[] runQuery(String s) throws ClassNotFoundException {
