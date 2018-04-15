@@ -8,7 +8,7 @@ public class Controller {
 	 * @param h
 	 * @return Fylki af hótelum sem uppfylla leitarskylirði
 	 */
-	public Object[] search(Hotel h) {
+	public Object[] search(HotelLeit h) {
 		return manager.searchForHotelInDb(h);
 	}	
 }

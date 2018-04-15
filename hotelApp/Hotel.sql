@@ -19,7 +19,6 @@ create table Hotel (
 	singlePrice VARCHAR(50),
 	doublePrice VARCHAR(50),
 	suitePrice VARCHAR(50)
-	CONSTRAINT
 );
 insert into Hotel values ('Babbleopia', 1, null, null, null,  'true',  'false',  'false',  'true',  'true', '3',  'false',  'true',  'true',  'true',  'false',  'true', '57780 kr/nótt', '24021 kr/nótt', '265083 kr/nótt');
 insert into Hotel values ('Pixoboo', 2, null, null, null,  'false',  'true',  'false',  'true',  'true', '2',  'false',  'true',  'true',  'true',  'false',  'false', '50759 kr/nótt', '47689 kr/nótt', '816726 kr/nótt');

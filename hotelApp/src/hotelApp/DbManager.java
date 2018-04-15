@@ -9,7 +9,8 @@ import java.util.Vector;
 
 public class DbManager {
 	
-	public String makeSearchQuery(String s){
+	public String makeSearchQuery(HotelLeit s){
+		
 		return "select name, ssn from hotel where name like '%" + s + "%'";
 		}
 	

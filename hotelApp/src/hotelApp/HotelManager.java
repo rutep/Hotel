@@ -3,7 +3,7 @@ package hotelApp;
 public class HotelManager {
 	private DbManager manager = new DbManager();
 	
-	public Object[] searchForHotelInDb(Hotel h) {
+	public Object[] searchForHotelInDb(HotelLeit h) {
 		try {
 		Object[] res = manager.runQuery(manager.makeSearchQuery(h.getName()));
 		return res;
