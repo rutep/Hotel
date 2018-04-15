@@ -92,27 +92,63 @@ public class hotelFrame {
 		frame.getContentPane().add(searchButton);
 		
 		JCheckBox chckbxFreeWifi = new JCheckBox("Free WiFi");
+		chckbxFreeWifi.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxFreeWifi.isSelected()) {
+					System.out.println("Free Wifi is selected");
+				}
+				else System.out.println("Free Wifi is not selected");
+			}
+		});
 		chckbxFreeWifi.setBounds(6, 85, 97, 23);
 		frame.getContentPane().add(chckbxFreeWifi);
 		
 		
 		JCheckBox chckbxBreakfast = new JCheckBox("Breakfast");
+		chckbxBreakfast.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxBreakfast.isSelected()) {
+					System.out.println("Breakfast is selected");
+				}
+				else System.out.println("Breakfast is not selected");
+			}
+		});
 		chckbxBreakfast.setBounds(6, 111, 97, 23);
 		frame.getContentPane().add(chckbxBreakfast);
 		
-		JCheckBox chckbxCarPark = new JCheckBox("Car Park");
-		chckbxCarPark.setBounds(6, 137, 97, 23);
-		frame.getContentPane().add(chckbxCarPark);
-		
 		JCheckBox chckbxSingleBed = new JCheckBox("Single Bed");
+		chckbxSingleBed.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxSingleBed.isSelected()) {
+					System.out.println("Single bed is selected");
+				}
+				else System.out.println("Single bed is not selected");
+			}
+		});
 		chckbxSingleBed.setBounds(106, 163, 97, 23);
 		frame.getContentPane().add(chckbxSingleBed);
 		
 		JCheckBox chckbxDoubleBed = new JCheckBox("Double Bed");
+		chckbxDoubleBed.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxDoubleBed.isSelected()) {
+					System.out.println("Double bed is selected");
+				}
+				else System.out.println("Double bed is not selected");
+			}
+		});
 		chckbxDoubleBed.setBounds(106, 189, 97, 23);
 		frame.getContentPane().add(chckbxDoubleBed);
 		
 		JCheckBox chckbxGym = new JCheckBox("Gym");
+		chckbxGym.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxGym.isSelected()) {
+					System.out.println("Gym is selected");
+				}
+				else System.out.println("Gym is not selected");
+			}
+		});
 		chckbxGym.setBounds(6, 163, 97, 23);
 		frame.getContentPane().add(chckbxGym);
 		
@@ -131,31 +167,87 @@ public class hotelFrame {
 		textField.setColumns(10);
 		
 		JCheckBox chckbxSpa = new JCheckBox("Spa");
+		chckbxSpa.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxSpa.isSelected()) {
+					System.out.println("Spa is selected");
+				}
+				else System.out.println("Spa is not selected");
+			}
+		});
 		chckbxSpa.setBounds(6, 189, 97, 23);
 		frame.getContentPane().add(chckbxSpa);
 		
 		JCheckBox chckbxPool = new JCheckBox("Pool");
-		chckbxPool.setBounds(106, 85, 97, 23);
+		chckbxPool.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxPool.isSelected()) {
+					System.out.println("Pool is selected");
+				}
+				else System.out.println("Pool is not selected");
+			}
+		});
+		chckbxPool.setBounds(106, 215, 97, 23);
 		frame.getContentPane().add(chckbxPool);
 		
 		JCheckBox chckbxCarParking = new JCheckBox("Car Parking");
+		chckbxCarParking.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxCarParking.isSelected()) {
+					System.out.println("Car parking is selected");
+				}
+				else System.out.println("Car parking is not selected");
+			}
+		});
 		chckbxCarParking.setBounds(106, 111, 97, 23);
 		frame.getContentPane().add(chckbxCarParking);
 		
 		JCheckBox chckbxVegan = new JCheckBox("Vegan");
+		chckbxVegan.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxVegan.isSelected()) {
+					System.out.println("Vegan is selected");
+				}
+				else System.out.println("Vegan is not selected");
+			}
+		});
 		chckbxVegan.setBounds(106, 137, 97, 23);
 		frame.getContentPane().add(chckbxVegan);
 		
-		JCheckBox chckbxHandicappecdAccess = new JCheckBox("Handicapped Access");
-		chckbxHandicappecdAccess.setBounds(6, 241, 135, 23);
-		frame.getContentPane().add(chckbxHandicappecdAccess);
+		JCheckBox chckbxHandicappedAccess = new JCheckBox("Handicapped Access");
+		chckbxHandicappedAccess.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxHandicappedAccess.isSelected()) {
+					System.out.println("Handicapped Access is selected");
+				}
+				else System.out.println("Handicapped Access is not selected");
+			}
+		});
+		chckbxHandicappedAccess.setBounds(106, 85, 135, 23);
+		frame.getContentPane().add(chckbxHandicappedAccess);
 		
 		JCheckBox chckbxPetsAllowed = new JCheckBox("Pets Allowed");
+		chckbxPetsAllowed.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxPetsAllowed.isSelected()) {
+					System.out.println("Pets Allowed is selected");
+				}
+				else System.out.println("Pets Allowed is not selected");
+			}
+		});
 		chckbxPetsAllowed.setBounds(6, 215, 97, 23);
 		frame.getContentPane().add(chckbxPetsAllowed);
 		
 		JCheckBox chckbxSuite = new JCheckBox("Suite");
-		chckbxSuite.setBounds(106, 215, 97, 23);
+		chckbxSuite.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxSuite.isSelected()) {
+					System.out.println("Suite is selected");
+				}
+				else System.out.println("Suite is not selected");
+			}
+		});
+		chckbxSuite.setBounds(6, 137, 97, 23);
 		frame.getContentPane().add(chckbxSuite);
 		
 		JButton btnRaa = new JButton("Price");
@@ -171,6 +263,10 @@ public class hotelFrame {
 		JList resultFrame = new JList(model);
 		resultFrame.setBounds(232, 163, 278, 150);
 		frame.getContentPane().add(resultFrame);
+		
+		JLabel lblSortBy = new JLabel("Sort by:");
+		lblSortBy.setBounds(130, 59, 46, 14);
+		frame.getContentPane().add(lblSortBy);
 		frame.setBounds(100, 100, 536, 363);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
