@@ -11,9 +11,28 @@ public class DbManager {
 	
 	public String makeSearchQuery(HotelLeit s){
 		
-		return "select name, ssn from hotel where name like '%" + s.getName() + "%'";
+		 String name = s.getName();
+		 String vegan, swimmingPool,breakfast,freeWifi,spa,handiCappedAcc,stars,gym,carParking;
+		 if (!s.getVegan()) vegan=""; else vegan="AND vegan='true'";
+		 if (!s.getVegan()) swimmingPool=""; else swimmingPool="AND swimmingPool='true'";
+		 if (!s.getBreakfast()) breakfast=""; else breakfast="AND breakfast='true'";
+		 if (!s.getFreeWifi()) freeWifi=""; else freeWifi="AND freeWifi='true'";
+		 if (!s.getSpa()) spa=""; else spa="AND spa='true'";
+		 if (!s.getHandiCappedAcc()) handiCappedAcc=""; else handiCappedAcc="AND handicappedAcc='true'";
+		 stars="AND stars<=" + stars;
+		 if (!s.getGym()) gym=""; else gym="AND gym='true'";
+		 if (!s.getParking()) carParking=""; else carParking="AND carParking='true'";
+		
+		return "select name, ssn from hotel where name like '%" + name + "%'" + vegan + swimmingPool +
+				breakfast + freeWifi + spa + handicappedAcc + stars + gym + carParking;
 		}
-	
+		
+		public String (String s, hotel) {
+			if s null
+			return
+			else 
+			s hotel.getwifi
+		}
 	public Object[] runQuery(String s) throws ClassNotFoundException {
 		// load the sqlite-JDBC driver using the current class loader
 		Class.forName("org.sqlite.JDBC");
