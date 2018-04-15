@@ -167,10 +167,7 @@ public class hotelFrame {
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				int x = slider.getValue();
-				
-				if(x < 25) {	
-					System.out.println("Ein stjarna valin");
-				}
+				//BÆTA VIÐ KÓÐA
 			}
 		});
 		slider.setBounds(261, 100, 200, 26);
