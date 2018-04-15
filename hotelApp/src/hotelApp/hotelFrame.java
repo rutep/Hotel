@@ -16,6 +16,10 @@ import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JList;
+import javax.swing.event.ChangeListener;
+import javax.swing.event.ChangeEvent;
+import javax.swing.JRadioButton;
+import javax.swing.ButtonGroup;
 
 public class hotelFrame {
 	
@@ -25,6 +29,7 @@ public class hotelFrame {
 	private JTextField textField;
 	private Controller controller = new Controller();
 	private JTable table;
+	private final ButtonGroup buttonGroup = new ButtonGroup();
 	
 	/**
 	 * Launch the application.
@@ -153,7 +158,16 @@ public class hotelFrame {
 		frame.getContentPane().add(chckbxGym);
 		
 		JSlider slider = new JSlider();
-		slider.setBounds(261, 85, 200, 26);
+		slider.addChangeListener(new ChangeListener() {
+			public void stateChanged(ChangeEvent arg0) {
+				int x = slider.getValue();
+				
+				if(x < 25) {	
+					System.out.println("Ein stjarna valin");
+				}
+			}
+		});
+		slider.setBounds(261, 100, 200, 26);
 		frame.getContentPane().add(slider);
 		
 		JLabel lblMinimumStars = new JLabel("Minimum Stars:");
@@ -162,7 +176,7 @@ public class hotelFrame {
 		
 		textField = new JTextField();
 		textField.setText("1            2             3              4                5");
-		textField.setBounds(261, 112, 202, 20);
+		textField.setBounds(261, 132, 202, 20);
 		frame.getContentPane().add(textField);
 		textField.setColumns(10);
 		
@@ -267,6 +281,43 @@ public class hotelFrame {
 		JLabel lblSortBy = new JLabel("Sort by:");
 		lblSortBy.setBounds(130, 59, 46, 14);
 		frame.getContentPane().add(lblSortBy);
+		
+		JRadioButton rdbtnSingleBed = new JRadioButton("Single bed");
+		rdbtnSingleBed.setSelected(true);
+		rdbtnSingleBed.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(rdbtnSingleBed.isSelected()) {
+					//herbergisTeg = 0;
+				}
+			}
+		});
+		buttonGroup.add(rdbtnSingleBed);
+		rdbtnSingleBed.setBounds(6, 241, 109, 23);
+		frame.getContentPane().add(rdbtnSingleBed);
+		
+		JRadioButton rdbtnDoubleBed = new JRadioButton("Double bed");
+		rdbtnDoubleBed.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(rdbtnDoubleBed.isSelected()) {
+				//	herbergisTeg = 1;
+				}
+			}
+		});
+		buttonGroup.add(rdbtnDoubleBed);
+		rdbtnDoubleBed.setBounds(6, 267, 109, 23);
+		frame.getContentPane().add(rdbtnDoubleBed);
+		
+		JRadioButton rdbtnSuite = new JRadioButton("Suite");
+		rdbtnSuite.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(rdbtnSuite.isSelected()) {
+				//	herbergisTeg = 2;
+				}
+			}
+		});
+		buttonGroup.add(rdbtnSuite);
+		rdbtnSuite.setBounds(6, 293, 109, 23);
+		frame.getContentPane().add(rdbtnSuite);
 		frame.setBounds(100, 100, 536, 363);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 	}
