@@ -34,6 +34,7 @@ public class hotelFrame {
 	private Controller controller = new Controller();
 	private JTable table;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private int herbergisTeg;
 	
 	/**
 	 * Launch the application.
@@ -296,7 +297,7 @@ public class hotelFrame {
 		rdbtnSingleBed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSingleBed.isSelected()) {
-					//herbergisTeg = 0;
+					herbergisTeg = 0;
 				}
 			}
 		});
@@ -308,7 +309,8 @@ public class hotelFrame {
 		rdbtnDoubleBed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnDoubleBed.isSelected()) {
-				//	herbergisTeg = 1;
+					herbergisTeg = 1;
+					System.out.println(herbergisTeg);
 				}
 			}
 		});
@@ -320,7 +322,8 @@ public class hotelFrame {
 		rdbtnSuite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSuite.isSelected()) {
-				//	herbergisTeg = 2;
+					herbergisTeg = 2;
+					System.out.println(herbergisTeg);
 				}
 			}
 		});
