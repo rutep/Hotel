@@ -74,6 +74,7 @@ public class hotelFrame {
 		chckbxFreeWifi.setBounds(6, 85, 97, 23);
 		frame.getContentPane().add(chckbxFreeWifi);
 		
+		
 		JCheckBox chckbxBreakfast = new JCheckBox("Breakfast");
 		chckbxBreakfast.setBounds(6, 111, 97, 23);
 		frame.getContentPane().add(chckbxBreakfast);
@@ -124,7 +125,7 @@ public class hotelFrame {
 		chckbxVegan.setBounds(106, 137, 97, 23);
 		frame.getContentPane().add(chckbxVegan);
 		
-		JCheckBox chckbxHandicappecdAccess = new JCheckBox("Handicappecd Access");
+		JCheckBox chckbxHandicappecdAccess = new JCheckBox("Handicapped Access");
 		chckbxHandicappecdAccess.setBounds(6, 241, 135, 23);
 		frame.getContentPane().add(chckbxHandicappecdAccess);
 		
@@ -137,7 +138,7 @@ public class hotelFrame {
 		frame.getContentPane().add(chckbxSuite);
 		
 		JButton btnRaa = new JButton("Price");
-		btnRaa.setBounds(265, 55, 75, 23);
+		btnRaa.setBounds(261, 56, 75, 23);
 		frame.getContentPane().add(btnRaa);
 		
 		JButton btnStars = new JButton("Stars");
