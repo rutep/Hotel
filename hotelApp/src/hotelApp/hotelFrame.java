@@ -25,6 +25,8 @@ import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
 import javax.swing.JScrollPane;
 import javax.swing.JComboBox;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class hotelFrame {
 	
@@ -69,11 +71,6 @@ public class hotelFrame {
 		frame.getContentPane().setBackground(new Color(200, 238, 244));
 		frame.getContentPane().setLayout(null);
 		
-		searchField = new JTextField();
-		searchField.setBounds(106, 11, 267, 34);
-		frame.getContentPane().add(searchField);
-		searchField.setColumns(10);
-		
 		DefaultListModel model = new DefaultListModel();
 	    JScrollPane scrollPane = new JScrollPane();
 	    scrollPane.setBounds(226, 159, 267, 159);
@@ -82,10 +79,33 @@ public class hotelFrame {
 	    scrollPane.setViewportView(resultFrame);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
+		searchField = new JTextField();
+		searchField.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyPressed(KeyEvent arg0) {
+				if(arg0.getKeyCode() == 10) {
+					// ************* Pétur *********
+					// Laga nafn á hótel class í Hótel
+					HotelLeit hotel = new HotelLeit(searchField.getText());
+					Object[] res = controller.search(hotel);
+					searchField.setText("");
+					// *****************************
+					model.clear();
+					for(int i = 0; i < res.length; i++) model.add(i, ((Hotel)res[i]).getName());
+					// *****************************
+				}
+			}
+		});
+		
+		searchField.setBounds(106, 11, 267, 34);
+		frame.getContentPane().add(searchField);
+		searchField.setColumns(10);
+		
+		
+		
 		JButton searchButton = new JButton("Search");
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				System.out.println(searchField.getText());
 				// ************* Pétur *********
 				// Laga nafn á hótel class í Hótel
 				HotelLeit hotel = new HotelLeit(searchField.getText());
