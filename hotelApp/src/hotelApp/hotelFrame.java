@@ -75,12 +75,12 @@ public class hotelFrame {
 		searchField.setColumns(10);
 		
 		DefaultListModel model = new DefaultListModel();
-	    
 	    JScrollPane scrollPane = new JScrollPane();
 	    scrollPane.setBounds(226, 159, 267, 159);
 	    frame.getContentPane().add(scrollPane);
 	    JList resultFrame = new JList(model);
 	    scrollPane.setViewportView(resultFrame);
+		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		JButton searchButton = new JButton("Search");
 		searchButton.addActionListener(new ActionListener() {
@@ -338,9 +338,10 @@ public class hotelFrame {
 		JComboBox landshluti = new JComboBox(landshlutaList);
 		landshluti.setBounds(6, 56, 114, 22);
 		frame.getContentPane().add(landshluti);
-		frame.setBounds(100, 100, 536, 363);
+		frame.setBounds(100, 100, 738, 363);
 		landshluti.setSelectedIndex(0);
-		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		
+		
 
 		
 		
