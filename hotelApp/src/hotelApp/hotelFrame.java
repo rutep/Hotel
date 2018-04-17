@@ -123,11 +123,9 @@ public class hotelFrame {
 		chckbxFreeWifi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxFreeWifi.isSelected()) {
-					System.out.println("Free Wifi is selected");
 					hotel.setWifi(true);
 				}
 				else {
-					System.out.println("Free Wifi is not selected");
 					hotel.setWifi(false);
 				}
 			}
@@ -140,11 +138,9 @@ public class hotelFrame {
 		chckbxBreakfast.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxBreakfast.isSelected()) {
-					System.out.println("Breakfast is selected");
 					hotel.setBreakfast(true);
 				}
 				else {
-					System.out.println("Breakfast is not selected");
 					hotel.setBreakfast(false);
 				}
 			}
@@ -188,11 +184,9 @@ public class hotelFrame {
 		chckbxGym.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxGym.isSelected()) {
-					System.out.println("Gym is selected");
 					hotel.setGym(true);
 				}
 				else {
-					System.out.println("Gym is not selected");
 					hotel.setGym(false);
 				}
 			}
@@ -206,9 +200,6 @@ public class hotelFrame {
 			public void stateChanged(ChangeEvent arg0) {
 				int x = slider.getValue();
 				hotel.setStars(x);				
-				if(x < 2) {	
-					System.out.println("Ein stjarna valin");
-				}
 			}
 		});
 		slider.setBounds(261, 100, 200, 26);
@@ -239,11 +230,9 @@ public class hotelFrame {
 		chckbxSpa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxSpa.isSelected()) {
-					System.out.println("Spa is selected");
 					hotel.setSpa(true);
 				}
 				else {
-					System.out.println("Spa is not selected");
 					hotel.setSpa(false);
 				}
 			}
@@ -255,11 +244,9 @@ public class hotelFrame {
 		chckbxPool.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPool.isSelected()) {
-					System.out.println("Pool is selected");
 					hotel.setPool(true);
 				}
 				else {
-					System.out.println("Pool is not selected");
 					hotel.setPool(false);
 				}
 			}
@@ -271,11 +258,9 @@ public class hotelFrame {
 		chckbxCarParking.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxCarParking.isSelected()) {
-					System.out.println("Car parking is selected");
 					hotel.setCarParking(true);
 				}
 				else {
-					System.out.println("Car parking is not selected");
 					hotel.setCarParking(false);
 				}
 			}
@@ -287,11 +272,9 @@ public class hotelFrame {
 		chckbxVegan.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxVegan.isSelected()) {
-					System.out.println("Vegan is selected");
 					hotel.setVegan(true);
 				}
 				else {
-					System.out.println("Vegan is not selected");
 					hotel.setVegan(false);
 				}
 			}
@@ -303,11 +286,9 @@ public class hotelFrame {
 		chckbxHandicappedAccess.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxHandicappedAccess.isSelected()) {
-					System.out.println("Handicapped Access is selected");
 					hotel.setHandicapped(true);
 				}
 				else {
-					System.out.println("Handicapped Access is not selected");
 					hotel.setHandicapped(false);
 				}
 			}
@@ -337,7 +318,7 @@ public class hotelFrame {
 		chckbxSuite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxSuite.isSelected()) {
-					System.out.println("Suite is selected");
+					//Þarf að kóða hér
 				}
 				else System.out.println("Suite is not selected");
 			}
