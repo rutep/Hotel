@@ -7,6 +7,7 @@ public class Hotel {
 	private int hotelId;
 	private String address;
 	private String town;
+	private int landshluti;
 	private boolean vegan;
 	private boolean swimmingPool;
 	private boolean breakfast;
@@ -25,14 +26,16 @@ public class Hotel {
 	
 	//Constructor ekki kláraður, þarf að spyrja Pétur nánar út í hann
 	//Spurningin er hvað nákvæmlega þarf í smiðinn, er það meira en nafn
-	public Hotel(String n, int i) {
+	public Hotel(String n, int i, int s) {
 		this.name = n;
+		this.stars = s;
 		this.hotelId = i;
+
 	}
 	
-	// Dev
-	public Hotel(String n) {
-		this.name = n;
+	// Smiður fyrir hótel leit
+	public Hotel() {
+		
 	}
 	
 	public void setName(String n) {
@@ -49,6 +52,10 @@ public class Hotel {
 	
 	public void setTown(String t) {
 		town = t;
+	}
+	
+	public void setLandshluti(int l) {
+		landshluti = l;
 	}
 	
 	public void setVegan(boolean v) {
@@ -125,6 +132,10 @@ public class Hotel {
 	
 	public String getTown() {
 		return town;
+	}
+	
+	public int getLandshluti() {
+		return landshluti;
 	}
 	
 	public boolean getVegan() {

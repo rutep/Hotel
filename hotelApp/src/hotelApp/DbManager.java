@@ -21,23 +21,17 @@ public class DbManager {
 		 if (!s.getBreakfast()) breakfast=""; else breakfast="AND breakfast='true'";
 		 if (!s.getFreeWifi()) freeWifi=""; else freeWifi="AND freeWifi='true'";
 		 if (!s.getSpa()) spa=""; else spa="AND spa='true'";
-		 // if (!s.getHandiCappedAcc()) handiCappedAcc=""; else handiCappedAcc="AND handicappedAcc='true'";
-		 stars="AND stars<=" + stars;
+		 if (!s.getHandicapped()) handiCappedAcc=""; else handiCappedAcc="AND handicappedAcc='true'";
+		 stars="AND stars<=" + s.getStars() + " ";
 		 if (!s.getGym()) gym=""; else gym="AND gym='true'";
 		 if (!s.getParking()) carParking=""; else carParking="AND carParking='true'";
-		 // Dev
-		 // return "select name, ssn from hotel where name like '%" + name + "%'" + vegan + swimmingPool +
-		 //		breakfast + freeWifi + spa + /*handicappedAcc +*/ stars + gym + carParking;
-		 // ******************************************************************************
-		 return "select name, ssn from hotel where name like '%" + name + "%'";
+		 return "select name, ssn, stars from hotel where name like '%" + name + "%'" + vegan + swimmingPool +
+			breakfast + freeWifi + spa + handiCappedAcc + stars + gym + carParking;
+
+		 //return "select name, ssn, stars from hotel where name like '%" + name + "%'";
 		}
 		/**
-		public String (String s, hotel) {
-			if s null
-			return
-			else 
-			s hotel.getwifi
-		}
+
 		 * 
 		 * @param s
 		 */
@@ -74,7 +68,7 @@ public class DbManager {
 				// iterate & read the result set
 				System.out.println("ssn = " + resultSet.getInt("ssn"));
 				System.out.println("name = " + resultSet.getString("name"));
-				Hotel res = new Hotel(resultSet.getString("name"),resultSet.getInt("ssn"));
+				Hotel res = new Hotel(resultSet.getString("name"),resultSet.getInt("ssn"),resultSet.getInt("stars"));
 				vec.add(res);
 			}
 		}

@@ -36,7 +36,11 @@ public class hotelFrame {
 	private JTextField textField;
 	private Controller controller = new Controller();
 	private JTable table;
+	private JSlider slider;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
+	private DefaultListModel model;
+	HotelLeit hotel = new HotelLeit();
+	
 	
 	/**
 	 * Launch the application.
@@ -61,7 +65,18 @@ public class hotelFrame {
 		initialize();
 	}
 	
-
+	private void leit() {
+		// ************* Pétur *********
+		// Laga nafn á hótel class í Hótel
+		hotel.setName(searchField.getText());
+		Object[] res = controller.search(hotel);
+		searchField.setText("");
+		// *****************************
+		model.clear();
+		for(int i = 0; i < res.length; i++) model.add(i, ((Hotel)res[i]).getName());
+		// *****************************
+		
+	}
 	
 	/** 
 	 * Initialize the contents of the frame.
@@ -71,7 +86,7 @@ public class hotelFrame {
 		frame.getContentPane().setBackground(new Color(200, 238, 244));
 		frame.getContentPane().setLayout(null);
 		
-		DefaultListModel model = new DefaultListModel();
+		model = new DefaultListModel();
 	    JScrollPane scrollPane = new JScrollPane();
 	    scrollPane.setBounds(226, 159, 267, 159);
 	    frame.getContentPane().add(scrollPane);
@@ -84,15 +99,7 @@ public class hotelFrame {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
 				if(arg0.getKeyCode() == 10) {
-					// ************* Pétur *********
-					// Laga nafn á hótel class í Hótel
-					HotelLeit hotel = new HotelLeit(searchField.getText());
-					Object[] res = controller.search(hotel);
-					searchField.setText("");
-					// *****************************
-					model.clear();
-					for(int i = 0; i < res.length; i++) model.add(i, ((Hotel)res[i]).getName());
-					// *****************************
+					leit();
 				}
 			}
 		});
@@ -102,20 +109,10 @@ public class hotelFrame {
 		searchField.setColumns(10);
 		
 		
-		
 		JButton searchButton = new JButton("Search");
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// ************* Pétur *********
-				// Laga nafn á hótel class í Hótel
-				HotelLeit hotel = new HotelLeit(searchField.getText());
-				Object[] res = controller.search(hotel);
-				System.out.println(((Hotel) res[0]).getName());
-				searchField.setText("");
-				// *****************************
-				model.clear();
-				for(int i = 0; i < res.length; i++) model.add(i, ((Hotel)res[i]).getName());
-				// *****************************
+				leit();
 			}
 		});
 		
@@ -127,8 +124,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxFreeWifi.isSelected()) {
 					System.out.println("Free Wifi is selected");
+					hotel.setWifi(true);
 				}
-				else System.out.println("Free Wifi is not selected");
+				else {
+					System.out.println("Free Wifi is not selected");
+					hotel.setWifi(false);
+				}
 			}
 		});
 		chckbxFreeWifi.setBounds(6, 85, 97, 23);
@@ -140,8 +141,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxBreakfast.isSelected()) {
 					System.out.println("Breakfast is selected");
+					hotel.setBreakfast(true);
 				}
-				else System.out.println("Breakfast is not selected");
+				else {
+					System.out.println("Breakfast is not selected");
+					hotel.setBreakfast(false);
+				}
 			}
 		});
 		chckbxBreakfast.setBounds(6, 111, 97, 23);
@@ -152,8 +157,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxSingleBed.isSelected()) {
 					System.out.println("Single bed is selected");
+					// Þarf að kóða hér, Haukur
 				}
-				else System.out.println("Single bed is not selected");
+				else {
+					System.out.println("Single bed is not selected");
+					// Þarf að kóða hér, Haukur
+				}
 			}
 		});
 		chckbxSingleBed.setBounds(106, 163, 97, 23);
@@ -164,8 +173,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxDoubleBed.isSelected()) {
 					System.out.println("Double bed is selected");
+					// Þarf að kóða hér, Haukur
 				}
-				else System.out.println("Double bed is not selected");
+				else {
+					System.out.println("Double bed is not selected");
+					// Þarf að kóða hér, Haukur
+				}
 			}
 		});
 		chckbxDoubleBed.setBounds(106, 189, 97, 23);
@@ -176,19 +189,23 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxGym.isSelected()) {
 					System.out.println("Gym is selected");
+					hotel.setGym(true);
 				}
-				else System.out.println("Gym is not selected");
+				else {
+					System.out.println("Gym is not selected");
+					hotel.setGym(false);
+				}
 			}
 		});
 		chckbxGym.setBounds(6, 163, 97, 23);
 		frame.getContentPane().add(chckbxGym);
 		
-		JSlider slider = new JSlider();
+		slider = new JSlider(1,5,5);
 
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				int x = slider.getValue();
-				
+				hotel.setStars(x);				
 				if(x < 2) {	
 					System.out.println("Ein stjarna valin");
 				}
@@ -197,9 +214,9 @@ public class hotelFrame {
 		slider.setBounds(261, 100, 200, 26);
 
 		slider.setMinorTickSpacing(1);
-		slider.setMinimum(1);
-		slider.setMaximum(5);
-		slider.setValue(5);
+		//slider.setMinimum(1);
+		//slider.setMaximum(5);
+		//slider.setValue(5);
 		slider.setSnapToTicks(true);
 		slider.setMajorTickSpacing(5);
 		slider.setBounds(261, 85, 200, 26);
@@ -223,8 +240,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxSpa.isSelected()) {
 					System.out.println("Spa is selected");
+					hotel.setSpa(true);
 				}
-				else System.out.println("Spa is not selected");
+				else {
+					System.out.println("Spa is not selected");
+					hotel.setSpa(false);
+				}
 			}
 		});
 		chckbxSpa.setBounds(6, 189, 97, 23);
@@ -235,8 +256,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPool.isSelected()) {
 					System.out.println("Pool is selected");
+					hotel.setPool(true);
 				}
-				else System.out.println("Pool is not selected");
+				else {
+					System.out.println("Pool is not selected");
+					hotel.setPool(false);
+				}
 			}
 		});
 		chckbxPool.setBounds(106, 215, 97, 23);
@@ -247,8 +272,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxCarParking.isSelected()) {
 					System.out.println("Car parking is selected");
+					hotel.setCarParking(true);
 				}
-				else System.out.println("Car parking is not selected");
+				else {
+					System.out.println("Car parking is not selected");
+					hotel.setCarParking(false);
+				}
 			}
 		});
 		chckbxCarParking.setBounds(106, 111, 97, 23);
@@ -259,8 +288,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxVegan.isSelected()) {
 					System.out.println("Vegan is selected");
+					hotel.setVegan(true);
 				}
-				else System.out.println("Vegan is not selected");
+				else {
+					System.out.println("Vegan is not selected");
+					hotel.setVegan(false);
+				}
 			}
 		});
 		chckbxVegan.setBounds(106, 137, 97, 23);
@@ -271,8 +304,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxHandicappedAccess.isSelected()) {
 					System.out.println("Handicapped Access is selected");
+					hotel.setHandicapped(true);
 				}
-				else System.out.println("Handicapped Access is not selected");
+				else {
+					System.out.println("Handicapped Access is not selected");
+					hotel.setHandicapped(false);
+				}
 			}
 		});
 		chckbxHandicappedAccess.setBounds(106, 85, 135, 23);
@@ -283,8 +320,14 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPetsAllowed.isSelected()) {
 					System.out.println("Pets Allowed is selected");
+					// ÞARF AÐ BUA TIL BREYTU, SETTER OG GETTER I HOTEL
+					//hotel.setPets(true;)
 				}
-				else System.out.println("Pets Allowed is not selected");
+				else {
+					System.out.println("Pets Allowed is not selected");
+					// ÞARF AÐ BÚA TIL BREYTU, SETTER OG GETTER I HOTEL
+					//hotel.setPets(false);
+				}
 			}
 		});
 		chckbxPetsAllowed.setBounds(6, 215, 97, 23);
@@ -353,6 +396,7 @@ public class hotelFrame {
 		rdbtnSuite.setBounds(6, 293, 109, 23);
 		frame.getContentPane().add(rdbtnSuite);
 		
+		// ÞARF AÐ KLÁRA ÚTFÆRA, VAR AÐ HUGSA UM AÐ SKILA INT BREYTUM, 1,2,3,4,5 EFTIR LANDSVÆÐI OG GÆTUM ÞÁ HAFT DEFAULT 0 MEÐ ÖLLU
 		String[] landshlutaList = {"Select an area", "South Iceland", "Western Iceland","North Iceland","East Iceland", "Reykjavík - Capital area"};
 		
 		JComboBox landshluti = new JComboBox(landshlutaList);
