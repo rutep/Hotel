@@ -20,6 +20,7 @@ import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JList;
 import javax.swing.event.ChangeListener;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.event.ChangeEvent;
 import javax.swing.JRadioButton;
 import javax.swing.ButtonGroup;
@@ -39,7 +40,9 @@ public class hotelFrame {
 	private JSlider slider;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private DefaultListModel model;
-	HotelLeit hotel = new HotelLeit();
+	public static HotelLeit hotel = new HotelLeit();
+	private JTable table_1;
+	private DefaultTableModel model_2;
 	
 	
 	/**
@@ -76,6 +79,11 @@ public class hotelFrame {
 		for(int i = 0; i < res.length; i++) model.add(i, ((Hotel)res[i]).getName());
 		// *****************************
 		
+		table_1.setModel(new DefaultTableModel());
+		model_2 = (DefaultTableModel) table_1.getModel();
+		model_2.setColumnIdentifiers(new String[]{"Name", ""});
+		for(int i = 0; i < res.length; i++) model_2.addRow(new String[] {((Hotel)res[i]).getName(), ""});
+		
 	}
 	
 	/** 
@@ -85,6 +93,13 @@ public class hotelFrame {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(200, 238, 244));
 		frame.getContentPane().setLayout(null);
+		
+		JScrollPane scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBounds(521, 161, 190, 153);
+		frame.getContentPane().add(scrollPane_1);
+		
+		table_1 = new JTable();
+		scrollPane_1.setViewportView(table_1);
 		
 		model = new DefaultListModel();
 	    JScrollPane scrollPane = new JScrollPane();
@@ -113,6 +128,7 @@ public class hotelFrame {
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				leit();
+				
 			}
 		});
 		
@@ -405,8 +421,11 @@ public class hotelFrame {
 		frame.setBounds(100, 100, 738, 363);
 		landshluti.setSelectedIndex(0);
 		
+	
 		
-
+		
+		
+		
 		
 		
 		
