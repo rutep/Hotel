@@ -45,23 +45,12 @@ public class hotelFrame {
 	private JTable table_1;
 	private DefaultTableModel model_2;
 	private static Object[] result;
-	
+	private JButton btnBoka = new JButton("B\u00F3ka");
 	
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					hotelFrame window = new hotelFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the application.
@@ -71,6 +60,11 @@ public class hotelFrame {
 	}
 	
 	private void leit() {
+<<<<<<< Updated upstream
+=======
+		// ************* P�tur *********
+		// Laga nafn � h�tel class � H�tel
+>>>>>>> Stashed changes
 		hotel.setName(searchField.getText());
 		Object[] res = controller.search(hotel);
 		result = res;
@@ -83,6 +77,7 @@ public class hotelFrame {
 		};
 		table_1.setModel(dtm);
 		model_2 = (DefaultTableModel) table_1.getModel();
+<<<<<<< Updated upstream
 		model_2.setColumnIdentifiers(new String[]
 				{"Name", "stars", "single room price" , "double room price", "suite price"});
 		for(int i = 0; i < res.length; i++) {
@@ -94,6 +89,15 @@ public class hotelFrame {
 					 hotel_res.getDoublePrice(),
 					 hotel_res.getSuitePrice() });
 		}
+
+		btnBoka.setEnabled(true);
+=======
+		model_2.setColumnIdentifiers(new String[]{"Name", "stars"});
+		for(int i = 0; i < res.length; i++) {
+			model_2.addRow(new String[] {((Hotel)res[i]).getName(), ((Hotel)res[i]).getStars()+ ""});
+		}
+		
+>>>>>>> Stashed changes
 	}
 	
 	/** 
@@ -103,6 +107,42 @@ public class hotelFrame {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(200, 238, 244));
 		frame.getContentPane().setLayout(null);
+		
+		
+		btnBoka.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// **************** Pétur *********************
+				 
+				int rowIndex = table_1.getSelectedRow();
+				
+				DefaultTableModel dtm = new DefaultTableModel(0, 0) {
+				    public boolean isCellEditable(int row, int column) {
+				        return false;
+				    }
+				};
+				table_1.setModel(dtm);
+				
+				model_2 = (DefaultTableModel) table_1.getModel();
+				model_2.setColumnIdentifiers(new String[]
+						{"Name", "stars", "single room price" , "double room price", "suite price"});
+				
+				Hotel hotel_res = ((Hotel)result[rowIndex]); 
+				model_2.addRow(new String[]
+						{hotel_res.getName(), 
+						 hotel_res.getStars()+ "",
+						 hotel_res.getSinglePrice(),
+						 hotel_res.getDoublePrice(),
+						 hotel_res.getSuitePrice() });
+				
+				btnBoka.setEnabled(false);
+				// ********************************************
+				//H�r �arf a� birta ni�urst��ur um b�kun / rafr�n kvittun
+				
+			}
+		});
+		btnBoka.setBounds(508, 85, 109, 49);
+		frame.getContentPane().add(btnBoka);
+		
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(221, 166, 632, 280);
@@ -135,7 +175,6 @@ public class hotelFrame {
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				leit();
-				
 			}
 		});
 		
@@ -175,6 +214,41 @@ public class hotelFrame {
 		chckbxBreakfast.setBounds(6, 111, 97, 23);
 		frame.getContentPane().add(chckbxBreakfast);
 		
+<<<<<<< Updated upstream
+=======
+		JCheckBox chckbxSingleBed = new JCheckBox("Single Bed");
+		chckbxSingleBed.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxSingleBed.isSelected()) {
+					System.out.println("Single bed is selected");
+					// �arf a� k��a h�r, Haukur
+				}
+				else {
+					System.out.println("Single bed is not selected");
+					// �arf a� k��a h�r, Haukur
+				}
+			}
+		});
+		chckbxSingleBed.setBounds(106, 163, 97, 23);
+		frame.getContentPane().add(chckbxSingleBed);
+		
+		JCheckBox chckbxDoubleBed = new JCheckBox("Double Bed");
+		chckbxDoubleBed.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				if(chckbxDoubleBed.isSelected()) {
+					System.out.println("Double bed is selected");
+					// �arf a� k��a h�r, Haukur
+				}
+				else {
+					System.out.println("Double bed is not selected");
+					// �arf a� k��a h�r, Haukur
+				}
+			}
+		});
+		chckbxDoubleBed.setBounds(106, 189, 97, 23);
+		frame.getContentPane().add(chckbxDoubleBed);
+		
+>>>>>>> Stashed changes
 		JCheckBox chckbxGym = new JCheckBox("Gym");
 		chckbxGym.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -308,12 +382,23 @@ public class hotelFrame {
 		chckbxPetsAllowed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPetsAllowed.isSelected()) {
+<<<<<<< Updated upstream
 					hotel.setPets(true);
 					leit();
 				}
 				else {
 					hotel.setPets(false);
 					leit();
+=======
+					System.out.println("Pets Allowed is selected");
+					// �ARF A� BUA TIL BREYTU, SETTER OG GETTER I HOTEL
+					//hotel.setPets(true;)
+				}
+				else {
+					System.out.println("Pets Allowed is not selected");
+					// �ARF A� B�A TIL BREYTU, SETTER OG GETTER I HOTEL
+					//hotel.setPets(false);
+>>>>>>> Stashed changes
 				}
 			}
 		});
@@ -323,6 +408,7 @@ public class hotelFrame {
 		JButton btnPrice = new JButton("Price");
 		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
+<<<<<<< Updated upstream
 				if (hotel.getSortPrice()==false) {
 					hotel.setSortPrice(true);
 					hotel.setFlokkaHvad("price");
@@ -332,6 +418,10 @@ public class hotelFrame {
 					hotel.setSortPrice(false);
 					hotel.setFlokkaHvad("price");
 					leit();
+=======
+				if(chckbxSuite.isSelected()) {
+					//�arf a� k��a h�r
+>>>>>>> Stashed changes
 				}
 			}
 		});
@@ -411,40 +501,6 @@ public class hotelFrame {
 		frame.setBounds(100, 100, 865, 520);
 		landshluti.setSelectedIndex(0);
 		
-		JButton btnBoka = new JButton("B\u00F3ka");
-		btnBoka.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				// **************** Pétur *********************
-				 
-				int rowIndex = table_1.getSelectedRow();
-				
-				DefaultTableModel dtm = new DefaultTableModel(0, 0) {
-				    public boolean isCellEditable(int row, int column) {
-				        return false;
-				    }
-				};
-				table_1.setModel(dtm);
-				
-				model_2 = (DefaultTableModel) table_1.getModel();
-				model_2.setColumnIdentifiers(new String[]
-						{"Name", "stars", "single room price" , "double room price", "suite price"});
-				
-				Hotel hotel_res = ((Hotel)result[rowIndex]); 
-				model_2.addRow(new String[]
-						{hotel_res.getName(), 
-						 hotel_res.getStars()+ "",
-						 hotel_res.getSinglePrice(),
-						 hotel_res.getDoublePrice(),
-						 hotel_res.getSuitePrice() });
-				
-				
-				// ********************************************
-				//H�r �arf a� birta ni�urst��ur um b�kun / rafr�n kvittun
-				
-			}
-		});
-		btnBoka.setBounds(508, 85, 109, 49);
-		frame.getContentPane().add(btnBoka);
 		
 		JLabel lblWelcome = new JLabel( /* loginFrame.gestur.getName() */ "");
 		lblWelcome.setBounds(6, 11, 90, 34);

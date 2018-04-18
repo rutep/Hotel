@@ -14,11 +14,18 @@ public class DbManager {
 		
 		 // *************************** Haukur ******************************************
 		 String name = s.getName();
+<<<<<<< Updated upstream
 		 String vegan, swimmingPool,breakfast,freeWifi,spa,handiCappedAcc,gym,carParking,
 		 pets,landshluti,stars,herbergisTeg,sort,flokkaHvad,flokkaHvernig;
 
 		 if (!s.getVegan()) vegan=""; 					else vegan="AND vegan='true'";
 		 if (!s.getPool()) swimmingPool=""; 			else swimmingPool="AND swimmingPool='true'";
+=======
+		 String vegan, swimmingPool,breakfast,freeWifi,spa,handiCappedAcc,gym,carParking;
+		 String stars = "";
+		 if (!s.getVegan()) vegan=""; 					else vegan="AND vegan='true'";
+		 if (!s.getVegan()) swimmingPool=""; 			else swimmingPool="AND swimmingPool='true'";
+>>>>>>> Stashed changes
 		 if (!s.getBreakfast()) breakfast=""; 			else breakfast="AND breakfast='true'";
 		 if (!s.getFreeWifi()) freeWifi=""; 			else freeWifi="AND freeWifi='true'";
 		 if (!s.getSpa()) spa=""; 						else spa="AND spa='true'";
@@ -26,6 +33,7 @@ public class DbManager {
 		 stars="AND stars<=" + s.getStars() + " ";
 		 if (!s.getGym()) gym=""; 						else gym="AND gym='true'";
 		 if (!s.getParking()) carParking=""; 			else carParking="AND carParking='true'";
+<<<<<<< Updated upstream
 		 if (!s.getPets()) pets="";						else pets="AND pets='true'";
 		 
 		 if (s.getHerbergisTeg()==0)					herbergisTeg="singlePrice";
@@ -47,6 +55,10 @@ public class DbManager {
 		 
 		 return "select * from hotel where name like '%" + name + "%'" + vegan + swimmingPool +
 			breakfast + freeWifi + spa + handiCappedAcc + stars + gym + carParking + pets + sort;
+=======
+		 return "select name, ssn, stars from hotel where name like '%" + name + "%'" + vegan + swimmingPool +
+			breakfast + freeWifi + spa + handiCappedAcc + stars + gym + carParking;
+>>>>>>> Stashed changes
 
 		 //return "select name, ssn, stars from hotel where name like '%" + name + "%'";
 		}
