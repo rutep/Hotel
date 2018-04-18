@@ -8,6 +8,7 @@ import java.awt.Container;
 import java.awt.Dimension;
 
 import javax.swing.JTextField;
+import javax.swing.ListSelectionModel;
 import javax.management.modelmbean.ModelMBean;
 import javax.swing.DefaultListModel;
 import javax.swing.JButton;
@@ -43,6 +44,7 @@ public class hotelFrame {
 	public static HotelLeit hotel = new HotelLeit();
 	private JTable table_1;
 	private DefaultTableModel model_2;
+	private static Object[] result;
 	
 	
 	/**
@@ -69,13 +71,17 @@ public class hotelFrame {
 	}
 	
 	private void leit() {
-		// ************* P�tur *********
-		// Laga nafn � h�tel class � H�tel
 		hotel.setName(searchField.getText());
 		Object[] res = controller.search(hotel);
+		result = res;
 		searchField.setText("");
 		
-		table_1.setModel(new DefaultTableModel());
+		DefaultTableModel dtm = new DefaultTableModel(0, 0) {
+		    public boolean isCellEditable(int row, int column) {
+		        return false;
+		    }
+		};
+		table_1.setModel(dtm);
 		model_2 = (DefaultTableModel) table_1.getModel();
 		model_2.setColumnIdentifiers(new String[]
 				{"Name", "stars", "single room price" , "double room price", "suite price"});
@@ -88,9 +94,6 @@ public class hotelFrame {
 					 hotel_res.getDoublePrice(),
 					 hotel_res.getSuitePrice() });
 		}
-		// *****************************
-		
-		
 	}
 	
 	/** 
@@ -106,7 +109,7 @@ public class hotelFrame {
 		frame.getContentPane().add(scrollPane_1);
 		
 		table_1 = new JTable();
-		table_1.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
+		table_1.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		scrollPane_1.setViewportView(table_1);
 		
 		
@@ -407,7 +410,31 @@ public class hotelFrame {
 		JButton btnBoka = new JButton("B\u00F3ka");
 		btnBoka.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
+				// **************** Pétur *********************
+				 
+				int rowIndex = table_1.getSelectedRow();
 				
+				DefaultTableModel dtm = new DefaultTableModel(0, 0) {
+				    public boolean isCellEditable(int row, int column) {
+				        return false;
+				    }
+				};
+				table_1.setModel(dtm);
+				
+				model_2 = (DefaultTableModel) table_1.getModel();
+				model_2.setColumnIdentifiers(new String[]
+						{"Name", "stars", "single room price" , "double room price", "suite price"});
+				
+				Hotel hotel_res = ((Hotel)result[rowIndex]); 
+				model_2.addRow(new String[]
+						{hotel_res.getName(), 
+						 hotel_res.getStars()+ "",
+						 hotel_res.getSinglePrice(),
+						 hotel_res.getDoublePrice(),
+						 hotel_res.getSuitePrice() });
+				
+				
+				// ********************************************
 				//H�r �arf a� birta ni�urst��ur um b�kun / rafr�n kvittun
 				
 			}
