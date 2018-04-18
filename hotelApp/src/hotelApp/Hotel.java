@@ -24,9 +24,7 @@ public class Hotel {
 	private String singlePrice;
 	private String doublePrice;
 	private String suitePrice;
-	
-	//Constructor ekki kl�ra�ur, �arf a� spyrja P�tur n�nar �t � hann
-	//Spurningin er hva� n�kv�mlega �arf � smi�inn, er �a� meira en nafn
+
 	public Hotel(String n, int i, int s) {
 		this.name = n;
 		this.stars = s;
