@@ -1,6 +1,6 @@
 package hotelApp;
 import java.awt.EventQueue;
-
+import java.awt.Window;
 
 import javax.swing.JFrame;
 import java.awt.Color;
@@ -43,7 +43,6 @@ public class hotelFrame {
 	public static HotelLeit hotel = new HotelLeit();
 	private JTable table_1;
 	private DefaultTableModel model_2;
-	private int herbergisTeg;
 	
 	
 	/**
@@ -357,7 +356,7 @@ public class hotelFrame {
 		rdbtnSingleBed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSingleBed.isSelected()) {
-					herbergisTeg = 0;
+					hotel.setHerbergisTeg(0);
 				}
 			}
 		});
@@ -369,7 +368,7 @@ public class hotelFrame {
 		rdbtnDoubleBed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnDoubleBed.isSelected()) {
-					herbergisTeg = 1;
+					hotel.setHerbergisTeg(1);
 				}
 			}
 		});
@@ -381,7 +380,7 @@ public class hotelFrame {
 		rdbtnSuite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSuite.isSelected()) {
-					herbergisTeg = 2;
+					hotel.setHerbergisTeg(2);
 				}
 			}
 		});
@@ -398,13 +397,23 @@ public class hotelFrame {
 		frame.setBounds(100, 100, 738, 363);
 		landshluti.setSelectedIndex(0);
 		
-	
+		JButton btnBoka = new JButton("B\u00F3ka");
+		btnBoka.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				//Hér þarf að birta niðurstöður um bókun / rafræn kvittun
+				
+			}
+		});
+		btnBoka.setBounds(508, 85, 109, 49);
+		frame.getContentPane().add(btnBoka);
+				
 		
-		
-		
-		
-		
-		
+	}
+
+	public void setVisible(boolean b) {
+		hotelFrame window = new hotelFrame();
+		window.frame.setVisible(true);
 		
 	}
 }
