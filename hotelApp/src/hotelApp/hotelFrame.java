@@ -106,7 +106,9 @@ public class hotelFrame {
 		frame.getContentPane().add(scrollPane_1);
 		
 		table_1 = new JTable();
+		table_1.putClientProperty("terminateEditOnFocusLost", Boolean.TRUE);
 		scrollPane_1.setViewportView(table_1);
+		
 		
 		model = new DefaultListModel();
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
