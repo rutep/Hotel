@@ -98,7 +98,7 @@ public class hotelFrame {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(240, 230, 140));
-		btnBoka.setBounds(508, 85, 109, 49);
+		btnBoka.setBounds(221, 98, 109, 49);
 		
 		
 		btnBoka.addActionListener(new ActionListener() {
@@ -137,7 +137,7 @@ public class hotelFrame {
 		
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(221, 166, 632, 280);
+		scrollPane_1.setBounds(12, 205, 841, 280);
 		frame.getContentPane().add(scrollPane_1);
 		
 		table_1 = new JTable();
@@ -149,7 +149,7 @@ public class hotelFrame {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		searchField = new JTextField();
-		searchField.setBounds(106, 11, 267, 34);
+		searchField.setBounds(464, 11, 267, 34);
 		searchField.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
@@ -163,7 +163,7 @@ public class hotelFrame {
 		
 		
 		JButton searchButton = new JButton("Search");
-		searchButton.setBounds(394, 11, 89, 34);
+		searchButton.setBounds(743, 10, 89, 34);
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				leit();
@@ -172,7 +172,7 @@ public class hotelFrame {
 		frame.getContentPane().add(searchButton);
 		
 		JCheckBox chckbxFreeWifi = new JCheckBox("Free WiFi");
-		chckbxFreeWifi.setBounds(6, 85, 97, 23);
+		chckbxFreeWifi.setBounds(760, 147, 97, 23);
 		chckbxFreeWifi.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxFreeWifi.isSelected()) {
@@ -189,7 +189,7 @@ public class hotelFrame {
 		
 		
 		JCheckBox chckbxBreakfast = new JCheckBox("Breakfast");
-		chckbxBreakfast.setBounds(6, 111, 97, 23);
+		chckbxBreakfast.setBounds(662, 147, 97, 23);
 		chckbxBreakfast.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxBreakfast.isSelected()) {
@@ -206,7 +206,7 @@ public class hotelFrame {
 		
 		
 		JCheckBox chckbxGym = new JCheckBox("Gym");
-		chckbxGym.setBounds(6, 163, 97, 23);
+		chckbxGym.setBounds(437, 147, 97, 23);
 		chckbxGym.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxGym.isSelected()) {
@@ -222,7 +222,7 @@ public class hotelFrame {
 		frame.getContentPane().add(chckbxGym);
 		
 		slider = new JSlider(1,5,3);
-		slider.setBounds(261, 85, 200, 26);
+		slider.setBounds(632, 82, 200, 26);
 
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
@@ -242,11 +242,11 @@ public class hotelFrame {
 		frame.getContentPane().add(slider);
 		
 		JLabel lblMinimumStars = new JLabel("Minimum Stars:");
-		lblMinimumStars.setBounds(364, 56, 97, 21);
+		lblMinimumStars.setBounds(703, 57, 129, 21);
 		frame.getContentPane().add(lblMinimumStars);
 		
 		textField = new JTextField();
-		textField.setBounds(261, 112, 202, 20);
+		textField.setBounds(630, 113, 202, 20);
 
 		textField.setText("1            2             3              4                5");
 
@@ -254,7 +254,7 @@ public class hotelFrame {
 		textField.setColumns(10);
 		
 		JCheckBox chckbxSpa = new JCheckBox("Spa");
-		chckbxSpa.setBounds(6, 189, 97, 23);
+		chckbxSpa.setBounds(221, 174, 79, 23);
 		chckbxSpa.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxSpa.isSelected()) {
@@ -270,7 +270,7 @@ public class hotelFrame {
 		frame.getContentPane().add(chckbxSpa);
 		
 		JCheckBox chckbxPool = new JCheckBox("Pool");
-		chckbxPool.setBounds(6, 137, 97, 23);
+		chckbxPool.setBounds(538, 147, 120, 23);
 		chckbxPool.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPool.isSelected()) {
@@ -286,7 +286,7 @@ public class hotelFrame {
 		frame.getContentPane().add(chckbxPool);
 		
 		JCheckBox chckbxCarParking = new JCheckBox("Car Parking");
-		chckbxCarParking.setBounds(106, 111, 97, 23);
+		chckbxCarParking.setBounds(538, 174, 120, 23);
 		chckbxCarParking.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxCarParking.isSelected()) {
@@ -302,7 +302,7 @@ public class hotelFrame {
 		frame.getContentPane().add(chckbxCarParking);
 		
 		JCheckBox chckbxVegan = new JCheckBox("Vegan");
-		chckbxVegan.setBounds(106, 137, 97, 23);
+		chckbxVegan.setBounds(437, 174, 97, 23);
 		chckbxVegan.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxVegan.isSelected()) {
@@ -318,7 +318,7 @@ public class hotelFrame {
 		frame.getContentPane().add(chckbxVegan);
 		
 		JCheckBox chckbxHandicappedAccess = new JCheckBox("Handicapped Access");
-		chckbxHandicappedAccess.setBounds(106, 85, 135, 23);
+		chckbxHandicappedAccess.setBounds(662, 174, 191, 23);
 		chckbxHandicappedAccess.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxHandicappedAccess.isSelected()) {
@@ -334,7 +334,7 @@ public class hotelFrame {
 		frame.getContentPane().add(chckbxHandicappedAccess);
 		
 		JCheckBox chckbxPetsAllowed = new JCheckBox("Pets Allowed");
-		chckbxPetsAllowed.setBounds(106, 163, 97, 23);
+		chckbxPetsAllowed.setBounds(304, 174, 129, 23);
 		chckbxPetsAllowed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPetsAllowed.isSelected()) {
@@ -350,7 +350,7 @@ public class hotelFrame {
 		frame.getContentPane().add(chckbxPetsAllowed);
 		
 		JButton btnPrice = new JButton("Price");
-		btnPrice.setBounds(261, 56, 75, 23);
+		btnPrice.setBounds(523, 85, 75, 23);
 		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 
@@ -369,7 +369,7 @@ public class hotelFrame {
 		frame.getContentPane().add(btnPrice);
 		
 		JButton btnStars = new JButton("Stars");
-		btnStars.setBounds(186, 56, 69, 23);
+		btnStars.setBounds(427, 85, 89, 23);
 		btnStars.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				if (hotel.getSortStars()==false) {
@@ -389,11 +389,11 @@ public class hotelFrame {
 		
 		
 		JLabel lblSortBy = new JLabel("Sort by:");
-		lblSortBy.setBounds(130, 59, 46, 14);
+		lblSortBy.setBounds(360, 89, 69, 19);
 		frame.getContentPane().add(lblSortBy);
 		
 		JRadioButton rdbtnSingleBed = new JRadioButton("Single bed");
-		rdbtnSingleBed.setBounds(6, 241, 109, 23);
+		rdbtnSingleBed.setBounds(221, 11, 109, 23);
 		rdbtnSingleBed.setSelected(true);
 		rdbtnSingleBed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -407,7 +407,7 @@ public class hotelFrame {
 		frame.getContentPane().add(rdbtnSingleBed);
 		
 		JRadioButton rdbtnDoubleBed = new JRadioButton("Double bed");
-		rdbtnDoubleBed.setBounds(6, 267, 109, 23);
+		rdbtnDoubleBed.setBounds(221, 33, 109, 23);
 		rdbtnDoubleBed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnDoubleBed.isSelected()) {
@@ -420,7 +420,7 @@ public class hotelFrame {
 		frame.getContentPane().add(rdbtnDoubleBed);
 		
 		JRadioButton rdbtnSuite = new JRadioButton("Suite");
-		rdbtnSuite.setBounds(6, 293, 109, 23);
+		rdbtnSuite.setBounds(221, 55, 109, 23);
 		rdbtnSuite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSuite.isSelected()) {
@@ -436,14 +436,14 @@ public class hotelFrame {
 		String[] landshlutaList = {"Select an area", "South Iceland", "Western Iceland","North Iceland","East Iceland", "Reykjav�k - Capital area"};
 		
 		JComboBox landshluti = new JComboBox(landshlutaList);
-		landshluti.setBounds(6, 56, 114, 22);
+		landshluti.setBounds(338, 16, 114, 22);
 		frame.getContentPane().add(landshluti);
 		frame.setBounds(100, 100, 865, 520);
 		landshluti.setSelectedIndex(0);
 		
 		
 		JLabel lblWelcome = new JLabel( /* loginFrame.gestur.getName() */ "");
-		lblWelcome.setBounds(6, 11, 90, 34);
+		lblWelcome.setBounds(34, 11, 142, 182);
 		frame.getContentPane().add(lblWelcome);
 		lblWelcome.setText(loginFrame.gestur.getName());		
 		
