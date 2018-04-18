@@ -21,12 +21,12 @@ public class Hotel {
 	private boolean doubleBed;
 	private boolean hotelSuite;
 	private boolean petsAllowed;
-	private double singlePrice;
-	private double doublePrice;
-	private double suitePrice;
+	private String singlePrice;
+	private String doublePrice;
+	private String suitePrice;
 	
-	//Constructor ekki kláraður, þarf að spyrja Pétur nánar út í hann
-	//Spurningin er hvað nákvæmlega þarf í smiðinn, er það meira en nafn
+	//Constructor ekki klï¿½raï¿½ur, ï¿½arf aï¿½ spyrja Pï¿½tur nï¿½nar ï¿½t ï¿½ hann
+	//Spurningin er hvaï¿½ nï¿½kvï¿½mlega ï¿½arf ï¿½ smiï¿½inn, er ï¿½aï¿½ meira en nafn
 	public Hotel(String n, int i, int s) {
 		this.name = n;
 		this.stars = s;
@@ -34,7 +34,7 @@ public class Hotel {
 
 	}
 	
-	// Smiður fyrir hótel leit
+	// Smiï¿½ur fyrir hï¿½tel leit
 	public Hotel() {
 		
 	}
@@ -107,15 +107,15 @@ public class Hotel {
 		hotelSuite = suite;
 	}
 	
-	public void setSinglePrice(double s) {
+	public void setSinglePrice(String s) {
 		singlePrice = s;
 	}
 	
-	public void setDoublePrice(double d) {
-		doublePrice = d;
+	public void setDoublePrice(String string) {
+		doublePrice = string;
 	}
 	
-	public void setSuitePrice(double p) {
+	public void setSuitePrice(String p) {
 		suitePrice = p;
 	}
 	
@@ -191,15 +191,15 @@ public class Hotel {
 		return hotelSuite;
 	}
 	
-	public double getSinglePrice() {
+	public String getSinglePrice() {
 		return singlePrice;
 	}
 	
-	public double getDoublePrice() {
+	public String getDoublePrice() {
 		return doublePrice;
 	}
 	
-	public double getSuitePrice() {
+	public String getSuitePrice() {
 		return suitePrice;
 	}
 	
