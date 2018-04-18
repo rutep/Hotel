@@ -309,9 +309,6 @@ public class hotelFrame {
 				else {
 					hotel.setPets(false);
 					leit();
-					System.out.println("Pets Allowed is selected");
-					// ï¿½ARF Aï¿½ BUA TIL BREYTU, SETTER OG GETTER I HOTEL
-					hotel.setPets(false);
 				}
 			}
 		});
@@ -321,7 +318,7 @@ public class hotelFrame {
 		JButton btnPrice = new JButton("Price");
 		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//hér þarf að kóða fyrir price sort
+				//hï¿½r ï¿½arf aï¿½ kï¿½ï¿½a fyrir price sort
 			}
 		});
 		btnPrice.setBounds(261, 56, 75, 23);
@@ -330,7 +327,7 @@ public class hotelFrame {
 		JButton btnStars = new JButton("Stars");
 		btnStars.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// Hér þarf að kóða fyrir stjörnur sort
+				// Hï¿½r ï¿½arf aï¿½ kï¿½ï¿½a fyrir stjï¿½rnur sort
 			}
 		});
 		btnStars.setBounds(186, 56, 69, 23);
@@ -395,7 +392,7 @@ public class hotelFrame {
 		btnBoka.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				//Hér þarf að birta niðurstöður um bókun / rafræn kvittun
+				//Hï¿½r ï¿½arf aï¿½ birta niï¿½urstï¿½ï¿½ur um bï¿½kun / rafrï¿½n kvittun
 				
 			}
 		});
