@@ -13,6 +13,9 @@ public class loginFrame extends JFrame {
 	private JTextField nafnField;
 	private JTextField ssnField;
 	public static Guest gestur = new Guest();
+	hotelFrame window = new hotelFrame();
+	static loginFrame frame = new loginFrame();
+				
 	
 	/**
 	 * Launch the application.
@@ -21,9 +24,7 @@ public class loginFrame extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					loginFrame frame = new loginFrame();
 					frame.setVisible(true);
-					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
@@ -63,13 +64,13 @@ public class loginFrame extends JFrame {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				hotelFrame hotel = new hotelFrame();
-				hotel.setVisible(true);
+				window.setVisible(true);
 				String name = nafnField.getText();
 				String ssn = ssnField.getText();
 				gestur.setName(name);
 				gestur.setSsn(ssn);
 				System.out.println(name + ", " + ssn);
+				frame.setVisible(false);
 			}
 		});
 		btnLogin.setBounds(146, 165, 89, 23);

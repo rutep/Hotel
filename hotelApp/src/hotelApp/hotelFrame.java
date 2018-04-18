@@ -45,23 +45,12 @@ public class hotelFrame {
 	private JTable table_1;
 	private DefaultTableModel model_2;
 	private static Object[] result;
-	
+	private JButton btnBoka = new JButton("B\u00F3ka");
 	
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					hotelFrame window = new hotelFrame();
-					window.frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
+
 
 	/**
 	 * Create the application.
@@ -94,6 +83,8 @@ public class hotelFrame {
 					 hotel_res.getDoublePrice(),
 					 hotel_res.getSuitePrice() });
 		}
+
+		btnBoka.setEnabled(true);
 	}
 	
 	/** 
@@ -103,6 +94,42 @@ public class hotelFrame {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(200, 238, 244));
 		frame.getContentPane().setLayout(null);
+		
+		
+		btnBoka.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// **************** Pétur *********************
+				 
+				int rowIndex = table_1.getSelectedRow();
+				
+				DefaultTableModel dtm = new DefaultTableModel(0, 0) {
+				    public boolean isCellEditable(int row, int column) {
+				        return false;
+				    }
+				};
+				table_1.setModel(dtm);
+				
+				model_2 = (DefaultTableModel) table_1.getModel();
+				model_2.setColumnIdentifiers(new String[]
+						{"Name", "stars", "single room price" , "double room price", "suite price"});
+				
+				Hotel hotel_res = ((Hotel)result[rowIndex]); 
+				model_2.addRow(new String[]
+						{hotel_res.getName(), 
+						 hotel_res.getStars()+ "",
+						 hotel_res.getSinglePrice(),
+						 hotel_res.getDoublePrice(),
+						 hotel_res.getSuitePrice() });
+				
+				btnBoka.setEnabled(false);
+				// ********************************************
+				//H�r �arf a� birta ni�urst��ur um b�kun / rafr�n kvittun
+				
+			}
+		});
+		btnBoka.setBounds(508, 85, 109, 49);
+		frame.getContentPane().add(btnBoka);
+		
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
 		scrollPane_1.setBounds(221, 166, 632, 280);
@@ -135,7 +162,6 @@ public class hotelFrame {
 		searchButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				leit();
-				
 			}
 		});
 		
@@ -407,40 +433,6 @@ public class hotelFrame {
 		frame.setBounds(100, 100, 865, 520);
 		landshluti.setSelectedIndex(0);
 		
-		JButton btnBoka = new JButton("B\u00F3ka");
-		btnBoka.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				// **************** Pétur *********************
-				 
-				int rowIndex = table_1.getSelectedRow();
-				
-				DefaultTableModel dtm = new DefaultTableModel(0, 0) {
-				    public boolean isCellEditable(int row, int column) {
-				        return false;
-				    }
-				};
-				table_1.setModel(dtm);
-				
-				model_2 = (DefaultTableModel) table_1.getModel();
-				model_2.setColumnIdentifiers(new String[]
-						{"Name", "stars", "single room price" , "double room price", "suite price"});
-				
-				Hotel hotel_res = ((Hotel)result[rowIndex]); 
-				model_2.addRow(new String[]
-						{hotel_res.getName(), 
-						 hotel_res.getStars()+ "",
-						 hotel_res.getSinglePrice(),
-						 hotel_res.getDoublePrice(),
-						 hotel_res.getSuitePrice() });
-				
-				
-				// ********************************************
-				//H�r �arf a� birta ni�urst��ur um b�kun / rafr�n kvittun
-				
-			}
-		});
-		btnBoka.setBounds(508, 85, 109, 49);
-		frame.getContentPane().add(btnBoka);
 		
 		JLabel lblWelcome = new JLabel( /* loginFrame.gestur.getName() */ "");
 		lblWelcome.setBounds(6, 11, 90, 34);
