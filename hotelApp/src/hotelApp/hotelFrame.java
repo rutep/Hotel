@@ -142,9 +142,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxFreeWifi.isSelected()) {
 					hotel.setWifi(true);
+					leit();
 				}
 				else {
 					hotel.setWifi(false);
+					leit();
 				}
 			}
 		});
@@ -157,9 +159,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxBreakfast.isSelected()) {
 					hotel.setBreakfast(true);
+					leit();
 				}
 				else {
 					hotel.setBreakfast(false);
+					leit();
 				}
 			}
 		});
@@ -203,9 +207,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxGym.isSelected()) {
 					hotel.setGym(true);
+					leit();
 				}
 				else {
 					hotel.setGym(false);
+					leit();
 				}
 			}
 		});
@@ -217,7 +223,8 @@ public class hotelFrame {
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				int x = slider.getValue();
-				hotel.setStars(x);				
+				hotel.setStars(x);
+				leit();
 			}
 		});
 		slider.setBounds(261, 100, 200, 26);
@@ -249,9 +256,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxSpa.isSelected()) {
 					hotel.setSpa(true);
+					leit();
 				}
 				else {
 					hotel.setSpa(false);
+					leit();
 				}
 			}
 		});
@@ -263,9 +272,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPool.isSelected()) {
 					hotel.setPool(true);
+					leit();
 				}
 				else {
 					hotel.setPool(false);
+					leit();
 				}
 			}
 		});
@@ -277,9 +288,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxCarParking.isSelected()) {
 					hotel.setCarParking(true);
+					leit();
 				}
 				else {
 					hotel.setCarParking(false);
+					leit();
 				}
 			}
 		});
@@ -291,9 +304,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxVegan.isSelected()) {
 					hotel.setVegan(true);
+					leit();
 				}
 				else {
 					hotel.setVegan(false);
+					leit();
 				}
 			}
 		});
@@ -305,9 +320,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxHandicappedAccess.isSelected()) {
 					hotel.setHandicapped(true);
+					leit();
 				}
 				else {
 					hotel.setHandicapped(false);
+					leit();
 				}
 			}
 		});
@@ -319,12 +336,14 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPetsAllowed.isSelected()) {
 					hotel.setPets(true);
+					leit();
 				}
 				else {
 					hotel.setPets(false);
+					leit();
 					System.out.println("Pets Allowed is selected");
 					// �ARF A� BUA TIL BREYTU, SETTER OG GETTER I HOTEL
-					//hotel.setPets(true;)
+					hotel.setPets(false);
 				}
 			}
 		});
@@ -362,6 +381,7 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSingleBed.isSelected()) {
 					hotel.setHerbergisTeg(0);
+					leit();
 				}
 			}
 		});
@@ -374,6 +394,7 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnDoubleBed.isSelected()) {
 					hotel.setHerbergisTeg(1);
+					leit();
 				}
 			}
 		});
@@ -386,6 +407,7 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSuite.isSelected()) {
 					hotel.setHerbergisTeg(2);
+					leit();
 				}
 			}
 		});
