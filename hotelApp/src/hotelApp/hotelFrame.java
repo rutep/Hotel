@@ -320,7 +320,14 @@ public class hotelFrame {
 		JButton btnPrice = new JButton("Price");
 		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				//h�r �arf a� k��a fyrir price sort
+				if (hotel.getSortPrice()==false) {
+					hotel.setSortPrice(true);
+					leit();
+				}
+				else {
+					hotel.setSortPrice(false);
+					leit();
+				}
 			}
 		});
 		btnPrice.setBounds(261, 56, 75, 23);
@@ -329,7 +336,14 @@ public class hotelFrame {
 		JButton btnStars = new JButton("Stars");
 		btnStars.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				// H�r �arf a� k��a fyrir stj�rnur sort
+				if (hotel.getSortStars()==false) {
+					hotel.setSortStars(true);
+					leit();
+				}
+				else {
+					hotel.setSortStars(false);
+					leit();
+				}
 			}
 		});
 		btnStars.setBounds(186, 56, 69, 23);

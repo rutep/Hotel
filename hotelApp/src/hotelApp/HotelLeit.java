@@ -20,6 +20,8 @@ public class HotelLeit extends Hotel {
 		setCarParking(false);
 		setHerbergisTeg(0);
 		setPets(false);
+		setSortPrice(false);
+		setSortStars(false);
 	}
 	
 	public void setHerbergisTeg(int h) {
