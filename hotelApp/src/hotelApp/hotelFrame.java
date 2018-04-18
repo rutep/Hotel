@@ -443,9 +443,14 @@ public class hotelFrame {
 		
 		
 		JLabel lblWelcome = new JLabel( /* loginFrame.gestur.getName() */ "");
-		lblWelcome.setBounds(34, 11, 142, 182);
+		lblWelcome.setBounds(30, 74, 177, 34);
 		frame.getContentPane().add(lblWelcome);
 		lblWelcome.setText(loginFrame.gestur.getName());		
+		
+		JLabel msg = new JLabel("New label");
+		msg.setBounds(30, 43, 177, 34);
+		frame.getContentPane().add(msg);
+		msg.setText("Welcome User:");
 		
 	}
 
