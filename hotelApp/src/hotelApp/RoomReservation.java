@@ -7,13 +7,12 @@ public class RoomReservation {
 		return daysBooked();
 	}
 	
-	public String guestBooked() {
+	public static String guestBooked() {
 		
 		return guestBooked();
 	}
 	
 	private int hotelId() {
-		
 		return hotelId();
 	}
 }

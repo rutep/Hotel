@@ -166,38 +166,6 @@ public class hotelFrame {
 		chckbxBreakfast.setBounds(6, 111, 97, 23);
 		frame.getContentPane().add(chckbxBreakfast);
 		
-		JCheckBox chckbxSingleBed = new JCheckBox("Single Bed");
-		chckbxSingleBed.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(chckbxSingleBed.isSelected()) {
-					System.out.println("Single bed is selected");
-					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
-				}
-				else {
-					System.out.println("Single bed is not selected");
-					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
-				}
-			}
-		});
-		chckbxSingleBed.setBounds(106, 163, 97, 23);
-		frame.getContentPane().add(chckbxSingleBed);
-		
-		JCheckBox chckbxDoubleBed = new JCheckBox("Double Bed");
-		chckbxDoubleBed.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(chckbxDoubleBed.isSelected()) {
-					System.out.println("Double bed is selected");
-					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
-				}
-				else {
-					System.out.println("Double bed is not selected");
-					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
-				}
-			}
-		});
-		chckbxDoubleBed.setBounds(106, 189, 97, 23);
-		frame.getContentPane().add(chckbxDoubleBed);
-		
 		JCheckBox chckbxGym = new JCheckBox("Gym");
 		chckbxGym.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -269,7 +237,7 @@ public class hotelFrame {
 				}
 			}
 		});
-		chckbxPool.setBounds(106, 215, 97, 23);
+		chckbxPool.setBounds(6, 137, 97, 23);
 		frame.getContentPane().add(chckbxPool);
 		
 		JCheckBox chckbxCarParking = new JCheckBox("Car Parking");
@@ -328,25 +296,24 @@ public class hotelFrame {
 				}
 			}
 		});
-		chckbxPetsAllowed.setBounds(6, 215, 97, 23);
+		chckbxPetsAllowed.setBounds(106, 163, 97, 23);
 		frame.getContentPane().add(chckbxPetsAllowed);
 		
-		JCheckBox chckbxSuite = new JCheckBox("Suite");
-		chckbxSuite.addActionListener(new ActionListener() {
+		JButton btnPrice = new JButton("Price");
+		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(chckbxSuite.isSelected()) {
-					//ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r
-				}
+				//hér þarf að kóða fyrir price sort
 			}
 		});
-		chckbxSuite.setBounds(6, 137, 97, 23);
-		frame.getContentPane().add(chckbxSuite);
-		
-		JButton btnRaa = new JButton("Price");
-		btnRaa.setBounds(261, 56, 75, 23);
-		frame.getContentPane().add(btnRaa);
+		btnPrice.setBounds(261, 56, 75, 23);
+		frame.getContentPane().add(btnPrice);
 		
 		JButton btnStars = new JButton("Stars");
+		btnStars.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// Hér þarf að kóða fyrir stjörnur sort
+			}
+		});
 		btnStars.setBounds(186, 56, 69, 23);
 		frame.getContentPane().add(btnStars);
 		
