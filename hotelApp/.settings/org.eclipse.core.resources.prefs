@@ -1,2 +1,11 @@
 eclipse.preferences.version=1
+encoding//src/hotelApp/Controller.java=UTF-8
+encoding//src/hotelApp/DbManager.java=UTF-8
+encoding//src/hotelApp/Hotel.java=UTF-8
+encoding//src/hotelApp/HotelLeit.java=UTF-8
+encoding//src/hotelApp/HotelManager.java=UTF-8
+encoding//src/hotelApp/Room.java=UTF-8
+encoding//src/hotelApp/RoomReservation.java=UTF-8
 encoding//src/hotelApp/hotelFrame.java=UTF-8
+encoding//src/hotelApp/hotelTest.java=UTF-8
+encoding//src/hotelApp/loginFrame.java=UTF-8
