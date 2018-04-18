@@ -5,6 +5,7 @@ public class HotelLeit extends Hotel {
 	private int herbergisTeg;
 	private boolean sortPrice;
 	private boolean sortStars;
+	private String flokkaHvad;
 	
 	public HotelLeit() {
 		setName("");

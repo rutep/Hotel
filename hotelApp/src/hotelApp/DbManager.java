@@ -14,8 +14,9 @@ public class DbManager {
 		
 		 // *************************** Haukur ******************************************
 		 String name = s.getName();
-		 String vegan, swimmingPool,breakfast,freeWifi,spa,handiCappedAcc,gym,carParking,pets;
-		 String stars = "";
+		 String vegan, swimmingPool,breakfast,freeWifi,spa,handiCappedAcc,gym,carParking,
+		 pets,landshluti,stars,herbergisTeg,sort;
+
 		 if (!s.getVegan()) vegan=""; 					else vegan="AND vegan='true'";
 		 if (!s.getPool()) swimmingPool=""; 			else swimmingPool="AND swimmingPool='true'";
 		 if (!s.getBreakfast()) breakfast=""; 			else breakfast="AND breakfast='true'";
@@ -26,6 +27,12 @@ public class DbManager {
 		 if (!s.getGym()) gym=""; 						else gym="AND gym='true'";
 		 if (!s.getParking()) carParking=""; 			else carParking="AND carParking='true'";
 		 if (!s.getPets()) pets="";						else pets="AND pets='true'";
+		 
+		 if (s.getHerbergisTeg()==0)					herbergisTeg="singlePrice";
+		 else if (s.getHerbergisTeg()==1)				herbergisTeg="doublePrice";
+		 else											herbergisTeg="suitePrice";
+		 
+		 
 		 return "select * from hotel where name like '%" + name + "%'" + vegan + swimmingPool +
 			breakfast + freeWifi + spa + handiCappedAcc + stars + gym + carParking + pets;
 
