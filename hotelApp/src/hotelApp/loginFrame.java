@@ -12,6 +12,7 @@ import java.awt.event.ActionEvent;
 public class loginFrame extends JFrame {
 	private JTextField nafnField;
 	private JTextField textField;
+	private String name;
 
 	/**
 	 * Launch the application.
@@ -63,6 +64,7 @@ public class loginFrame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				hotelFrame hotel = new hotelFrame();
 				hotel.setVisible(true);
+				
 			}
 		});
 		btnLogin.setBounds(146, 165, 89, 23);

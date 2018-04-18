@@ -144,9 +144,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxFreeWifi.isSelected()) {
 					hotel.setWifi(true);
+					leit();
 				}
 				else {
 					hotel.setWifi(false);
+					leit();
 				}
 			}
 		});
@@ -159,55 +161,27 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxBreakfast.isSelected()) {
 					hotel.setBreakfast(true);
+					leit();
 				}
 				else {
 					hotel.setBreakfast(false);
+					leit();
 				}
 			}
 		});
 		chckbxBreakfast.setBounds(6, 111, 97, 23);
 		frame.getContentPane().add(chckbxBreakfast);
 		
-		JCheckBox chckbxSingleBed = new JCheckBox("Single Bed");
-		chckbxSingleBed.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(chckbxSingleBed.isSelected()) {
-					System.out.println("Single bed is selected");
-					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
-				}
-				else {
-					System.out.println("Single bed is not selected");
-					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
-				}
-			}
-		});
-		chckbxSingleBed.setBounds(106, 163, 97, 23);
-		frame.getContentPane().add(chckbxSingleBed);
-		
-		JCheckBox chckbxDoubleBed = new JCheckBox("Double Bed");
-		chckbxDoubleBed.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(chckbxDoubleBed.isSelected()) {
-					System.out.println("Double bed is selected");
-					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
-				}
-				else {
-					System.out.println("Double bed is not selected");
-					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
-				}
-			}
-		});
-		chckbxDoubleBed.setBounds(106, 189, 97, 23);
-		frame.getContentPane().add(chckbxDoubleBed);
-		
 		JCheckBox chckbxGym = new JCheckBox("Gym");
 		chckbxGym.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxGym.isSelected()) {
 					hotel.setGym(true);
+					leit();
 				}
 				else {
 					hotel.setGym(false);
+					leit();
 				}
 			}
 		});
@@ -219,7 +193,8 @@ public class hotelFrame {
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
 				int x = slider.getValue();
-				hotel.setStars(x);				
+				hotel.setStars(x);
+				leit();
 			}
 		});
 		slider.setBounds(261, 100, 200, 26);
@@ -251,9 +226,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxSpa.isSelected()) {
 					hotel.setSpa(true);
+					leit();
 				}
 				else {
 					hotel.setSpa(false);
+					leit();
 				}
 			}
 		});
@@ -265,13 +242,15 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPool.isSelected()) {
 					hotel.setPool(true);
+					leit();
 				}
 				else {
 					hotel.setPool(false);
+					leit();
 				}
 			}
 		});
-		chckbxPool.setBounds(106, 215, 97, 23);
+		chckbxPool.setBounds(6, 137, 97, 23);
 		frame.getContentPane().add(chckbxPool);
 		
 		JCheckBox chckbxCarParking = new JCheckBox("Car Parking");
@@ -279,9 +258,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxCarParking.isSelected()) {
 					hotel.setCarParking(true);
+					leit();
 				}
 				else {
 					hotel.setCarParking(false);
+					leit();
 				}
 			}
 		});
@@ -293,9 +274,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxVegan.isSelected()) {
 					hotel.setVegan(true);
+					leit();
 				}
 				else {
 					hotel.setVegan(false);
+					leit();
 				}
 			}
 		});
@@ -307,9 +290,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxHandicappedAccess.isSelected()) {
 					hotel.setHandicapped(true);
+					leit();
 				}
 				else {
 					hotel.setHandicapped(false);
+					leit();
 				}
 			}
 		});
@@ -321,34 +306,32 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPetsAllowed.isSelected()) {
 					hotel.setPets(true);
+					leit();
 				}
 				else {
 					hotel.setPets(false);
-					System.out.println("Pets Allowed is selected");
-					// ï¿½ARF Aï¿½ BUA TIL BREYTU, SETTER OG GETTER I HOTEL
-					//hotel.setPets(true;)
+					leit();
 				}
 			}
 		});
-		chckbxPetsAllowed.setBounds(6, 215, 97, 23);
+		chckbxPetsAllowed.setBounds(106, 163, 97, 23);
 		frame.getContentPane().add(chckbxPetsAllowed);
 		
-		JCheckBox chckbxSuite = new JCheckBox("Suite");
-		chckbxSuite.addActionListener(new ActionListener() {
+		JButton btnPrice = new JButton("Price");
+		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-				if(chckbxSuite.isSelected()) {
-					//ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r
-				}
+				//hï¿½r ï¿½arf aï¿½ kï¿½ï¿½a fyrir price sort
 			}
 		});
-		chckbxSuite.setBounds(6, 137, 97, 23);
-		frame.getContentPane().add(chckbxSuite);
-		
-		JButton btnRaa = new JButton("Price");
-		btnRaa.setBounds(261, 56, 75, 23);
-		frame.getContentPane().add(btnRaa);
+		btnPrice.setBounds(261, 56, 75, 23);
+		frame.getContentPane().add(btnPrice);
 		
 		JButton btnStars = new JButton("Stars");
+		btnStars.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				// Hï¿½r ï¿½arf aï¿½ kï¿½ï¿½a fyrir stjï¿½rnur sort
+			}
+		});
 		btnStars.setBounds(186, 56, 69, 23);
 		frame.getContentPane().add(btnStars);
 		
@@ -364,6 +347,7 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSingleBed.isSelected()) {
 					hotel.setHerbergisTeg(0);
+					leit();
 				}
 			}
 		});
@@ -376,6 +360,7 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnDoubleBed.isSelected()) {
 					hotel.setHerbergisTeg(1);
+					leit();
 				}
 			}
 		});
@@ -388,6 +373,7 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSuite.isSelected()) {
 					hotel.setHerbergisTeg(2);
+					leit();
 				}
 			}
 		});
@@ -408,7 +394,7 @@ public class hotelFrame {
 		btnBoka.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
 				
-				//Hér þarf að birta niðurstöður um bókun / rafræn kvittun
+				//Hï¿½r ï¿½arf aï¿½ birta niï¿½urstï¿½ï¿½ur um bï¿½kun / rafrï¿½n kvittun
 				
 			}
 		});
