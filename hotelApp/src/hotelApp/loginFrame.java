@@ -13,7 +13,6 @@ public class loginFrame extends JFrame {
 	private JTextField nafnField;
 	private JTextField ssnField;
 	public static Guest gestur = new Guest();
-	public static hotelFrame hotel = new hotelFrame();
 	
 	/**
 	 * Launch the application.
@@ -24,7 +23,6 @@ public class loginFrame extends JFrame {
 				try {
 					loginFrame frame = new loginFrame();
 					frame.setVisible(true);
-					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
