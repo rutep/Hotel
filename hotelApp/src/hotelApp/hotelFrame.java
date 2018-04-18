@@ -60,11 +60,7 @@ public class hotelFrame {
 	}
 	
 	private void leit() {
-<<<<<<< Updated upstream
-=======
-		// ************* P�tur *********
-		// Laga nafn � h�tel class � H�tel
->>>>>>> Stashed changes
+
 		hotel.setName(searchField.getText());
 		Object[] res = controller.search(hotel);
 		result = res;
@@ -77,7 +73,7 @@ public class hotelFrame {
 		};
 		table_1.setModel(dtm);
 		model_2 = (DefaultTableModel) table_1.getModel();
-<<<<<<< Updated upstream
+
 		model_2.setColumnIdentifiers(new String[]
 				{"Name", "stars", "single room price" , "double room price", "suite price"});
 		for(int i = 0; i < res.length; i++) {
@@ -91,14 +87,9 @@ public class hotelFrame {
 		}
 
 		btnBoka.setEnabled(true);
-=======
-		model_2.setColumnIdentifiers(new String[]{"Name", "stars"});
-		for(int i = 0; i < res.length; i++) {
-			model_2.addRow(new String[] {((Hotel)res[i]).getName(), ((Hotel)res[i]).getStars()+ ""});
-		}
 		
->>>>>>> Stashed changes
 	}
+	
 	
 	/** 
 	 * Initialize the contents of the frame.
@@ -214,41 +205,7 @@ public class hotelFrame {
 		chckbxBreakfast.setBounds(6, 111, 97, 23);
 		frame.getContentPane().add(chckbxBreakfast);
 		
-<<<<<<< Updated upstream
-=======
-		JCheckBox chckbxSingleBed = new JCheckBox("Single Bed");
-		chckbxSingleBed.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(chckbxSingleBed.isSelected()) {
-					System.out.println("Single bed is selected");
-					// �arf a� k��a h�r, Haukur
-				}
-				else {
-					System.out.println("Single bed is not selected");
-					// �arf a� k��a h�r, Haukur
-				}
-			}
-		});
-		chckbxSingleBed.setBounds(106, 163, 97, 23);
-		frame.getContentPane().add(chckbxSingleBed);
 		
-		JCheckBox chckbxDoubleBed = new JCheckBox("Double Bed");
-		chckbxDoubleBed.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				if(chckbxDoubleBed.isSelected()) {
-					System.out.println("Double bed is selected");
-					// �arf a� k��a h�r, Haukur
-				}
-				else {
-					System.out.println("Double bed is not selected");
-					// �arf a� k��a h�r, Haukur
-				}
-			}
-		});
-		chckbxDoubleBed.setBounds(106, 189, 97, 23);
-		frame.getContentPane().add(chckbxDoubleBed);
-		
->>>>>>> Stashed changes
 		JCheckBox chckbxGym = new JCheckBox("Gym");
 		chckbxGym.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
@@ -382,23 +339,12 @@ public class hotelFrame {
 		chckbxPetsAllowed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPetsAllowed.isSelected()) {
-<<<<<<< Updated upstream
 					hotel.setPets(true);
 					leit();
 				}
 				else {
 					hotel.setPets(false);
 					leit();
-=======
-					System.out.println("Pets Allowed is selected");
-					// �ARF A� BUA TIL BREYTU, SETTER OG GETTER I HOTEL
-					//hotel.setPets(true;)
-				}
-				else {
-					System.out.println("Pets Allowed is not selected");
-					// �ARF A� B�A TIL BREYTU, SETTER OG GETTER I HOTEL
-					//hotel.setPets(false);
->>>>>>> Stashed changes
 				}
 			}
 		});
@@ -408,7 +354,7 @@ public class hotelFrame {
 		JButton btnPrice = new JButton("Price");
 		btnPrice.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
-<<<<<<< Updated upstream
+
 				if (hotel.getSortPrice()==false) {
 					hotel.setSortPrice(true);
 					hotel.setFlokkaHvad("price");
@@ -418,13 +364,10 @@ public class hotelFrame {
 					hotel.setSortPrice(false);
 					hotel.setFlokkaHvad("price");
 					leit();
-=======
-				if(chckbxSuite.isSelected()) {
-					//�arf a� k��a h�r
->>>>>>> Stashed changes
 				}
 			}
 		});
+		
 		btnPrice.setBounds(261, 56, 75, 23);
 		frame.getContentPane().add(btnPrice);
 		
