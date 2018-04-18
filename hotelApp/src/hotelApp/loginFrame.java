@@ -11,9 +11,9 @@ import java.awt.event.ActionEvent;
 
 public class loginFrame extends JFrame {
 	private JTextField nafnField;
-	private JTextField textField;
-	private String name;
-
+	private JTextField ssnField;
+	public static Guest gestur = new Guest();
+	
 	/**
 	 * Launch the application.
 	 */
@@ -52,10 +52,10 @@ public class loginFrame extends JFrame {
 		getContentPane().add(nafnField);
 		nafnField.setColumns(10);
 		
-		textField = new JTextField();
-		textField.setBounds(146, 121, 140, 20);
-		getContentPane().add(textField);
-		textField.setColumns(10);
+		ssnField = new JTextField();
+		ssnField.setBounds(146, 121, 140, 20);
+		getContentPane().add(ssnField);
+		ssnField.setColumns(10);
 		
 		
 		
@@ -64,7 +64,11 @@ public class loginFrame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				hotelFrame hotel = new hotelFrame();
 				hotel.setVisible(true);
-				
+				String name = nafnField.getText();
+				String ssn = ssnField.getText();
+				gestur.setName(name);
+				gestur.setSsn(ssn);
+				System.out.println(name + ", " + ssn);
 			}
 		});
 		btnLogin.setBounds(146, 165, 89, 23);
