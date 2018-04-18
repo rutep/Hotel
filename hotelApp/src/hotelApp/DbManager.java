@@ -17,7 +17,7 @@ public class DbManager {
 		 String vegan, swimmingPool,breakfast,freeWifi,spa,handiCappedAcc,gym,carParking;
 		 String stars = "";
 		 if (!s.getVegan()) vegan=""; 					else vegan="AND vegan='true'";
-		 if (!s.getVegan()) swimmingPool=""; 			else swimmingPool="AND swimmingPool='true'";
+		 if (!s.getPool()) swimmingPool=""; 			else swimmingPool="AND swimmingPool='true'";
 		 if (!s.getBreakfast()) breakfast=""; 			else breakfast="AND breakfast='true'";
 		 if (!s.getFreeWifi()) freeWifi=""; 			else freeWifi="AND freeWifi='true'";
 		 if (!s.getSpa()) spa=""; 						else spa="AND spa='true'";

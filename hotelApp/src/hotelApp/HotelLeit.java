@@ -3,6 +3,8 @@ package hotelApp;
 public class HotelLeit extends Hotel {
 	
 	private int herbergisTeg;
+	private boolean sortPrice;
+	private boolean sortStars;
 	
 	public HotelLeit() {
 		setName("");
@@ -17,6 +19,7 @@ public class HotelLeit extends Hotel {
 		setGym(false);
 		setCarParking(false);
 		setHerbergisTeg(0);
+		setPets(false);
 	}
 	
 	public void setHerbergisTeg(int h) {
@@ -25,5 +28,20 @@ public class HotelLeit extends Hotel {
 	
 	public int getHerbergisTeg() {
 		return herbergisTeg;
+	}
+	
+	public void setSortPrice(boolean s) {
+		sortPrice = s;
+	}
+	public boolean getSortPrice() {
+		return sortPrice;
+	}
+	
+	public void setSortStars(boolean s) {
+		sortStars = s;
+	}
+	
+	public boolean getSortStars() {
+		return sortStars;
 	}
 }
