@@ -20,6 +20,7 @@ public class Hotel {
 	private boolean singleBed;
 	private boolean doubleBed;
 	private boolean hotelSuite;
+	private boolean petsAllowed;
 	private double singlePrice;
 	private double doublePrice;
 	private double suitePrice;
@@ -118,6 +119,10 @@ public class Hotel {
 		suitePrice = p;
 	}
 	
+	public void setPets(boolean p) {
+		petsAllowed = p;
+	}
+	
 	public String getName() {
 		return name;
 	}
@@ -196,6 +201,10 @@ public class Hotel {
 	
 	public double getSuitePrice() {
 		return suitePrice;
+	}
+	
+	public boolean getPets() {
+		return petsAllowed;
 	}
 	
 }

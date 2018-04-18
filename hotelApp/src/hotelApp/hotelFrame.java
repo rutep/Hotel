@@ -43,6 +43,7 @@ public class hotelFrame {
 	public static HotelLeit hotel = new HotelLeit();
 	private JTable table_1;
 	private DefaultTableModel model_2;
+	private int herbergisTeg;
 	
 	
 	/**
@@ -210,7 +211,7 @@ public class hotelFrame {
 		chckbxGym.setBounds(6, 163, 97, 23);
 		frame.getContentPane().add(chckbxGym);
 		
-		slider = new JSlider(1,5,5);
+		slider = new JSlider(1,5,3);
 
 		slider.addChangeListener(new ChangeListener() {
 			public void stateChanged(ChangeEvent arg0) {
@@ -256,7 +257,7 @@ public class hotelFrame {
 		chckbxSpa.setBounds(6, 189, 97, 23);
 		frame.getContentPane().add(chckbxSpa);
 		
-		JCheckBox chckbxPool = new JCheckBox("Pool");
+		JCheckBox chckbxPool = new JCheckBox("Pool");	
 		chckbxPool.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPool.isSelected()) {
@@ -316,14 +317,10 @@ public class hotelFrame {
 		chckbxPetsAllowed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxPetsAllowed.isSelected()) {
-					System.out.println("Pets Allowed is selected");
-					// ÞARF AÐ BUA TIL BREYTU, SETTER OG GETTER I HOTEL
-					//hotel.setPets(true;)
+					hotel.setPets(true);
 				}
 				else {
-					System.out.println("Pets Allowed is not selected");
-					// ÞARF AÐ BÚA TIL BREYTU, SETTER OG GETTER I HOTEL
-					//hotel.setPets(false);
+					hotel.setPets(false);
 				}
 			}
 		});
@@ -336,7 +333,6 @@ public class hotelFrame {
 				if(chckbxSuite.isSelected()) {
 					//Þarf að kóða hér
 				}
-				else System.out.println("Suite is not selected");
 			}
 		});
 		chckbxSuite.setBounds(6, 137, 97, 23);
@@ -361,7 +357,7 @@ public class hotelFrame {
 		rdbtnSingleBed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSingleBed.isSelected()) {
-					//herbergisTeg = 0;
+					herbergisTeg = 0;
 				}
 			}
 		});
@@ -373,7 +369,7 @@ public class hotelFrame {
 		rdbtnDoubleBed.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnDoubleBed.isSelected()) {
-				//	herbergisTeg = 1;
+					herbergisTeg = 1;
 				}
 			}
 		});
@@ -385,7 +381,7 @@ public class hotelFrame {
 		rdbtnSuite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(rdbtnSuite.isSelected()) {
-				//	herbergisTeg = 2;
+					herbergisTeg = 2;
 				}
 			}
 		});
