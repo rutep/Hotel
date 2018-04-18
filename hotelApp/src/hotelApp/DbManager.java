@@ -16,22 +16,21 @@ public class DbManager {
 		 String name = s.getName();
 		 String vegan, swimmingPool,breakfast,freeWifi,spa,handiCappedAcc,gym,carParking;
 		 String stars = "";
-		 if (!s.getVegan()) vegan=""; else vegan="AND vegan='true'";
-		 if (!s.getVegan()) swimmingPool=""; else swimmingPool="AND swimmingPool='true'";
-		 if (!s.getBreakfast()) breakfast=""; else breakfast="AND breakfast='true'";
-		 if (!s.getFreeWifi()) freeWifi=""; else freeWifi="AND freeWifi='true'";
-		 if (!s.getSpa()) spa=""; else spa="AND spa='true'";
-		 if (!s.getHandicapped()) handiCappedAcc=""; else handiCappedAcc="AND handicappedAcc='true'";
+		 if (!s.getVegan()) vegan=""; 					else vegan="AND vegan='true'";
+		 if (!s.getVegan()) swimmingPool=""; 			else swimmingPool="AND swimmingPool='true'";
+		 if (!s.getBreakfast()) breakfast=""; 			else breakfast="AND breakfast='true'";
+		 if (!s.getFreeWifi()) freeWifi=""; 			else freeWifi="AND freeWifi='true'";
+		 if (!s.getSpa()) spa=""; 						else spa="AND spa='true'";
+		 if (!s.getHandicapped()) handiCappedAcc=""; 	else handiCappedAcc="AND handicappedAcc='true'";
 		 stars="AND stars<=" + s.getStars() + " ";
-		 if (!s.getGym()) gym=""; else gym="AND gym='true'";
-		 if (!s.getParking()) carParking=""; else carParking="AND carParking='true'";
-		 return "select name, ssn, stars from hotel where name like '%" + name + "%'" + vegan + swimmingPool +
+		 if (!s.getGym()) gym=""; 						else gym="AND gym='true'";
+		 if (!s.getParking()) carParking=""; 			else carParking="AND carParking='true'";
+		 return "select * from hotel where name like '%" + name + "%'" + vegan + swimmingPool +
 			breakfast + freeWifi + spa + handiCappedAcc + stars + gym + carParking;
 
 		 //return "select name, ssn, stars from hotel where name like '%" + name + "%'";
 		}
 		/**
-
 		 * 
 		 * @param s
 		 */
@@ -66,9 +65,12 @@ public class DbManager {
 			while(resultSet.next())
 			{
 				// iterate & read the result set
-				System.out.println("ssn = " + resultSet.getInt("ssn"));
-				System.out.println("name = " + resultSet.getString("name"));
+				// System.out.println("ssn = " + resultSet.getInt("ssn"));
+				// System.out.println("name = " + resultSet.getString("name"));
 				Hotel res = new Hotel(resultSet.getString("name"),resultSet.getInt("ssn"),resultSet.getInt("stars"));
+				res.setSinglePrice(resultSet.getString("singlePrice"));
+				res.setDoublePrice(resultSet.getString("doublePrice"));
+				res.setSuitePrice(resultSet.getString("suitePrice"));
 				vec.add(res);
 			}
 		}

@@ -69,20 +69,27 @@ public class hotelFrame {
 	}
 	
 	private void leit() {
-		// ************* Pétur *********
-		// Laga nafn á hótel class í Hótel
+		// ************* Pï¿½tur *********
+		// Laga nafn ï¿½ hï¿½tel class ï¿½ Hï¿½tel
 		hotel.setName(searchField.getText());
 		Object[] res = controller.search(hotel);
 		searchField.setText("");
-		// *****************************
-		model.clear();
-		for(int i = 0; i < res.length; i++) model.add(i, ((Hotel)res[i]).getName());
-		// *****************************
 		
 		table_1.setModel(new DefaultTableModel());
 		model_2 = (DefaultTableModel) table_1.getModel();
-		model_2.setColumnIdentifiers(new String[]{"Name", ""});
-		for(int i = 0; i < res.length; i++) model_2.addRow(new String[] {((Hotel)res[i]).getName(), ""});
+		model_2.setColumnIdentifiers(new String[]
+				{"Name", "stars", "single room price" , "double room price", "suite price"});
+		for(int i = 0; i < res.length; i++) {
+			Hotel hotel_res = ((Hotel)res[i]); 
+			model_2.addRow(new String[]
+					{hotel_res.getName(), 
+					 hotel_res.getStars()+ "",
+					 hotel_res.getSinglePrice(),
+					 hotel_res.getDoublePrice(),
+					 hotel_res.getSuitePrice() });
+		}
+		// *****************************
+		
 		
 	}
 	
@@ -95,18 +102,13 @@ public class hotelFrame {
 		frame.getContentPane().setLayout(null);
 		
 		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(521, 161, 190, 153);
+		scrollPane_1.setBounds(221, 166, 632, 280);
 		frame.getContentPane().add(scrollPane_1);
 		
 		table_1 = new JTable();
 		scrollPane_1.setViewportView(table_1);
 		
 		model = new DefaultListModel();
-	    JScrollPane scrollPane = new JScrollPane();
-	    scrollPane.setBounds(226, 159, 267, 159);
-	    frame.getContentPane().add(scrollPane);
-	    JList resultFrame = new JList(model);
-	    scrollPane.setViewportView(resultFrame);
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		
 		searchField = new JTextField();
@@ -169,11 +171,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxSingleBed.isSelected()) {
 					System.out.println("Single bed is selected");
-					// Þarf að kóða hér, Haukur
+					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
 				}
 				else {
 					System.out.println("Single bed is not selected");
-					// Þarf að kóða hér, Haukur
+					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
 				}
 			}
 		});
@@ -185,11 +187,11 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxDoubleBed.isSelected()) {
 					System.out.println("Double bed is selected");
-					// Þarf að kóða hér, Haukur
+					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
 				}
 				else {
 					System.out.println("Double bed is not selected");
-					// Þarf að kóða hér, Haukur
+					// ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r, Haukur
 				}
 			}
 		});
@@ -320,6 +322,9 @@ public class hotelFrame {
 				}
 				else {
 					hotel.setPets(false);
+					System.out.println("Pets Allowed is selected");
+					// ï¿½ARF Aï¿½ BUA TIL BREYTU, SETTER OG GETTER I HOTEL
+					//hotel.setPets(true;)
 				}
 			}
 		});
@@ -330,7 +335,7 @@ public class hotelFrame {
 		chckbxSuite.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxSuite.isSelected()) {
-					//Þarf að kóða hér
+					//ï¿½arf aï¿½ kï¿½ï¿½a hï¿½r
 				}
 			}
 		});
@@ -388,13 +393,13 @@ public class hotelFrame {
 		rdbtnSuite.setBounds(6, 293, 109, 23);
 		frame.getContentPane().add(rdbtnSuite);
 		
-		// ÞARF AÐ KLÁRA ÚTFÆRA, VAR AÐ HUGSA UM AÐ SKILA INT BREYTUM, 1,2,3,4,5 EFTIR LANDSVÆÐI OG GÆTUM ÞÁ HAFT DEFAULT 0 MEÐ ÖLLU
-		String[] landshlutaList = {"Select an area", "South Iceland", "Western Iceland","North Iceland","East Iceland", "Reykjavík - Capital area"};
+		// ï¿½ARF Aï¿½ KLï¿½RA ï¿½TFï¿½RA, VAR Aï¿½ HUGSA UM Aï¿½ SKILA INT BREYTUM, 1,2,3,4,5 EFTIR LANDSVï¿½ï¿½I OG Gï¿½TUM ï¿½ï¿½ HAFT DEFAULT 0 MEï¿½ ï¿½LLU
+		String[] landshlutaList = {"Select an area", "South Iceland", "Western Iceland","North Iceland","East Iceland", "Reykjavï¿½k - Capital area"};
 		
 		JComboBox landshluti = new JComboBox(landshlutaList);
 		landshluti.setBounds(6, 56, 114, 22);
 		frame.getContentPane().add(landshluti);
-		frame.setBounds(100, 100, 738, 363);
+		frame.setBounds(100, 100, 865, 520);
 		landshluti.setSelectedIndex(0);
 		
 		JButton btnBoka = new JButton("B\u00F3ka");
