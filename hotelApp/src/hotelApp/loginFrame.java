@@ -13,6 +13,7 @@ public class loginFrame extends JFrame {
 	private JTextField nafnField;
 	private JTextField ssnField;
 	public static Guest gestur = new Guest();
+	public static hotelFrame hotel = new hotelFrame();
 	
 	/**
 	 * Launch the application.
@@ -64,8 +65,10 @@ public class loginFrame extends JFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				hotelFrame hotel = new hotelFrame();
 				hotel.setVisible(true);
+				
 				String name = nafnField.getText();
 				String ssn = ssnField.getText();
+				
 				gestur.setName(name);
 				gestur.setSsn(ssn);
 				System.out.println(name + ", " + ssn);
