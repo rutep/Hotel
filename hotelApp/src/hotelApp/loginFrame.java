@@ -64,13 +64,6 @@ public class loginFrame extends JFrame {
 		JButton btnLogin = new JButton("Login");
 		btnLogin.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-<<<<<<< HEAD
-				window.setVisible(true);
-=======
-				hotelFrame hotel = new hotelFrame();
-				hotel.setVisible(true);
-				
->>>>>>> 7326f324cabf8fe3fb4cf6b39a238f56e0a34543
 				String name = nafnField.getText();
 				String ssn = ssnField.getText();
 				
@@ -78,6 +71,7 @@ public class loginFrame extends JFrame {
 				gestur.setSsn(ssn);
 				System.out.println(name + ", " + ssn);
 				frame.setVisible(false);
+				window.setVisible(true);
 			}
 		});
 		btnLogin.setBounds(146, 165, 89, 23);
