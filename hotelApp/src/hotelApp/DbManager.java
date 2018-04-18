@@ -27,7 +27,7 @@ public class DbManager {
 		 if (!s.getGym()) gym=""; 						else gym="AND gym='true'";
 		 if (!s.getParking()) carParking=""; 			else carParking="AND carParking='true'";
 		 if (!s.getPets()) pets="";						else pets="AND pets='true'";
-		 
+		 if (s.getLandshluti()=="Select an area") landshluti=""; else landshluti = "AND landshluti='" + s.getLandshluti() + "' ";
 		 if (s.getHerbergisTeg()==0)					herbergisTeg="singlePrice";
 		 else if (s.getHerbergisTeg()==1)				herbergisTeg="doublePrice";
 		 else											herbergisTeg="suitePrice";
@@ -46,7 +46,7 @@ public class DbManager {
 		 
 		 
 		 return "select * from hotel where name like '%" + name + "%'" + vegan + swimmingPool +
-			breakfast + freeWifi + spa + handiCappedAcc + stars + gym + carParking + pets + sort;
+			breakfast + freeWifi + spa + handiCappedAcc + stars + gym + carParking + pets + landshluti + sort;
 
 		 //return "select name, ssn, stars from hotel where name like '%" + name + "%'";
 		}

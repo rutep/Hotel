@@ -9,7 +9,7 @@ public class HotelLeit extends Hotel {
 	
 	public HotelLeit() {
 		setName("");
-		setLandshluti(0);
+		setLandshluti("Select an area");
 		setVegan(false);
 		setPool(false);
 		setBreakfast(false);

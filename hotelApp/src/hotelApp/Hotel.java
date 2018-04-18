@@ -7,7 +7,7 @@ public class Hotel {
 	private int hotelId;
 	private String address;
 	private String town;
-	private int landshluti;
+	private String landshluti;
 	private boolean vegan;
 	private boolean swimmingPool;
 	private boolean breakfast;
@@ -53,7 +53,7 @@ public class Hotel {
 		town = t;
 	}
 	
-	public void setLandshluti(int l) {
+	public void setLandshluti(String l) {
 		landshluti = l;
 	}
 	
@@ -137,7 +137,7 @@ public class Hotel {
 		return town;
 	}
 	
-	public int getLandshluti() {
+	public String getLandshluti() {
 		return landshluti;
 	}
 	

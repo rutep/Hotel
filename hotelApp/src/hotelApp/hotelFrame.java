@@ -439,7 +439,13 @@ public class hotelFrame {
 		landshluti.setBounds(338, 16, 114, 22);
 		frame.getContentPane().add(landshluti);
 		frame.setBounds(100, 100, 865, 520);
-		landshluti.setSelectedIndex(0);
+		landshluti.setSelectedIndex(5);
+		landshluti.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				JComboBox cb = (JComboBox)e.getSource();
+				hotel.setLandshluti((String)cb.getSelectedItem());
+			}
+		});
 		
 		
 		JLabel lblWelcome = new JLabel( /* loginFrame.gestur.getName() */ "");
@@ -451,6 +457,8 @@ public class hotelFrame {
 		msg.setBounds(30, 43, 177, 34);
 		frame.getContentPane().add(msg);
 		msg.setText("Welcome User:");
+		
+		leit();
 		
 	}
 
