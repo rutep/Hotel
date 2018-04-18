@@ -5,6 +5,7 @@ public class HotelLeit extends Hotel {
 	private int herbergisTeg;
 	private boolean sortPrice;
 	private boolean sortStars;
+	private String flokkaHvad;
 	
 	public HotelLeit() {
 		setName("");
@@ -18,10 +19,11 @@ public class HotelLeit extends Hotel {
 		setStars(5);
 		setGym(false);
 		setCarParking(false);
-		setHerbergisTeg(0);
 		setPets(false);
-		setSortPrice(false);
-		setSortStars(false);
+		herbergisTeg = 0;
+		sortPrice = true;
+		sortStars = true;
+		flokkaHvad = "price";
 	}
 	
 	public void setHerbergisTeg(int h) {
@@ -45,5 +47,13 @@ public class HotelLeit extends Hotel {
 	
 	public boolean getSortStars() {
 		return sortStars;
+	}
+	
+	public void setFlokkaHvad(String s) {
+		flokkaHvad = s;
+	}
+	
+	public String getFlokkaHvad() {
+		return flokkaHvad;
 	}
 }

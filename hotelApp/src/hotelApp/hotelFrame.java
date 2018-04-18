@@ -351,10 +351,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent e) {
 				if (hotel.getSortPrice()==false) {
 					hotel.setSortPrice(true);
+					hotel.setFlokkaHvad("price");
 					leit();
 				}
 				else {
 					hotel.setSortPrice(false);
+					hotel.setFlokkaHvad("price");
 					leit();
 				}
 			}
@@ -367,10 +369,12 @@ public class hotelFrame {
 			public void actionPerformed(ActionEvent arg0) {
 				if (hotel.getSortStars()==false) {
 					hotel.setSortStars(true);
+					hotel.setFlokkaHvad("stars");
 					leit();
 				}
 				else {
 					hotel.setSortStars(false);
+					hotel.setFlokkaHvad("stars");
 					leit();
 				}
 			}
