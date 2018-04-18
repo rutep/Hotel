@@ -442,7 +442,7 @@ public class hotelFrame {
 		btnBoka.setBounds(508, 85, 109, 49);
 		frame.getContentPane().add(btnBoka);
 		
-		JLabel lblWelcome = new JLabel(loginFrame.gestur.getName());
+		JLabel lblWelcome = new JLabel( /* loginFrame.gestur.getName() */ "");
 		lblWelcome.setBounds(6, 11, 90, 34);
 		frame.getContentPane().add(lblWelcome);
 				

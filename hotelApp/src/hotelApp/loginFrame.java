@@ -23,6 +23,7 @@ public class loginFrame extends JFrame {
 				try {
 					loginFrame frame = new loginFrame();
 					frame.setVisible(true);
+					
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
