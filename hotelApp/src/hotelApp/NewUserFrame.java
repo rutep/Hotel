@@ -19,7 +19,7 @@ import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
 /**
- * Bókunar rammi sem sér um að skrá nýjan notenda í kerfið.
+ * Bókunar rammi sem sér um að skrá nýjan notenda í kerfið
  */
 
 public class NewUserFrame extends JFrame {
@@ -41,6 +41,15 @@ public class NewUserFrame extends JFrame {
 	static boolean checkGuests(String n, String ssn) {
 		for (int i = 0; i <= guestIndex; i++) {
 			if(guest[i].getName().equals(n) || guest[i].getSsn().equals(ssn)) {
+				return true;
+			}
+		}
+		return false;
+	}
+	
+	static boolean checkGuest(String n, String ssn) {
+		for (int i = 0; i <= guestIndex; i++) {
+			if(guest[i].getName().equals(n) && guest[i].getSsn().equals(ssn)) {
 				return true;
 			}
 		}

@@ -42,7 +42,7 @@ public class loginFrame extends JFrame {
 		String ssn = ssnField.getText();
 		gestur.setName(name);
 		gestur.setSsn(ssn);
-		if(NewUserFrame.checkGuests(name, ssn)) {
+		if(NewUserFrame.checkGuest(name, ssn)) {
 			frame.setVisible(false);
 			window.setVisible(true);
 			userExists.setText("");

@@ -113,6 +113,16 @@ public class hotelFrame {
 
 		btnBoka.setEnabled(true);
 		
+		JButton logout = new JButton("Logout");
+		logout.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				loginFrame.window.setVisible(false);
+				loginFrame.frame.setVisible(true);
+			}
+		});
+		logout.setBounds(12, 11, 117, 25);
+		frame.getContentPane().add(logout);
+		
 	//	JDateChooser dateChooser = new JDateChooser();
 	//	dateChooser.setBounds(12, 143, 89, 20);
 	//	frame.getContentPane().add(dateChooser);
@@ -490,12 +500,12 @@ public class hotelFrame {
 		
 		
 		JLabel lblWelcome = new JLabel( /* loginFrame.gestur.getName() */ "");
-		lblWelcome.setBounds(30, 74, 177, 34);
+		lblWelcome.setBounds(12, 67, 177, 34);
 		frame.getContentPane().add(lblWelcome);
 		lblWelcome.setText(loginFrame.gestur.getName());		
 		
 		JLabel msg = new JLabel("New label");
-		msg.setBounds(30, 43, 177, 34);
+		msg.setBounds(12, 50, 177, 34);
 		frame.getContentPane().add(msg);
 		msg.setText("Welcome User:");
 		
@@ -504,8 +514,7 @@ public class hotelFrame {
 	}
 
 	public void setVisible(boolean b) {
-		hotelFrame window = new hotelFrame();
-		window.frame.setVisible(true);
+		loginFrame.window.frame.setVisible(b);
 		
 	}
 }
