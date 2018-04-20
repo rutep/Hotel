@@ -174,7 +174,7 @@ public class hotelFrame {
 					btnBoka.setEnabled(false);
 				}
 				// senda bokun i gagnagrunn
-				RoomReservation reservation = new RoomReservation(hotel_res,loginFrame.gestur);	
+				RoomReservation reservation = new RoomReservation(hotel_res,loginFrame.gestur,hotel.getHerbergisTeg());	
 				controller.boka(reservation);
 				// ********************************************
 				//Hér þarf að birta niðurstöður í result glugga

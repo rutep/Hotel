@@ -111,9 +111,13 @@ public class DbManager {
 		return vec.toArray();
 	}
 	public String runBoka(RoomReservation s) {
-		return "";
-		
-		//return "INSERT INTO PERSON VALUES ('" + s[0] + "','" + s[1] + "'," + s[2] + "," + s[3] + ");";
+		String name, ssn;
+		int hotelssn, roomtype;
+		name = s.getGuest().getName();
+		ssn = s.getGuest().getSsn();
+		hotelssn = s.getHotel().getHotelId();
+		roomtype = s.getHerbergisTeg();
+		return "INSERT INTO PERSON VALUES ('" + name + "','" + ssn + "'," + hotelssn + "," + roomtype + ");";
 	}
 		
 	
