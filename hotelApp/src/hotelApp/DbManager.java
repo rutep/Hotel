@@ -95,6 +95,7 @@ public class DbManager {
 				res.setSinglePrice(resultSet.getString("singlePrice"));
 				res.setDoublePrice(resultSet.getString("doublePrice"));
 				res.setSuitePrice(resultSet.getString("suitePrice"));
+				res.setAddress(resultSet.getString("address"));
 				vec.add(res);
 			}
 		}

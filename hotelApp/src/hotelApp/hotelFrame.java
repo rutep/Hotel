@@ -160,12 +160,30 @@ public class hotelFrame {
 				model_2.setColumnIdentifiers(new String[]
 						{"Name", "Price", "Room type", "Address"});
 				
+				String price = "";
+				String type = "";
+				
 				Hotel hotel_res = ((Hotel)result[rowIndex]); 
+				
+				if(hotel.getHerbergisTeg() == 0) {
+					price = hotel_res.getSinglePrice();
+					type = "Single";
+				}
+				if(hotel.getHerbergisTeg() == 1) {
+					price = hotel_res.getDoublePrice();
+					type = "Double";
+				}
+				if(hotel.getHerbergisTeg() == 2) {
+					price = hotel_res.getSuitePrice();
+					type = "Suite";
+				}
+				
 				model_2.addRow(new String[]
 						{loginFrame.gestur.getName(),
-						 hotel_res.getSuitePrice(),
-						 "type",
-						 hotel_res.getAddress()});
+						price,
+						 type,
+						 hotel_res.getAddress(),
+						 });
 										
 				if(btnBoka.getText().equals("Bóka")) {
 					btnBoka.setText("Bókun staðfest");
