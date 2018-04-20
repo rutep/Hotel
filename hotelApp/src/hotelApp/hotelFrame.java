@@ -473,7 +473,7 @@ public class hotelFrame {
 		frame.getContentPane().add(rdbtnSuite);
 		
 		// �ARF A� KL�RA �TF�RA, VAR A� HUGSA UM A� SKILA INT BREYTUM, 1,2,3,4,5 EFTIR LANDSV��I OG G�TUM �� HAFT DEFAULT 0 ME� �LLU
-		String[] landshlutaList = {"Select an area", "South Iceland", "Western Iceland","North Iceland","East Iceland", "Reykjavík - Capital area"};
+		String[] landshlutaList = {"Select an area", "South Iceland", "West Iceland","North Iceland","East Iceland", "Reykjavík - Capital area"};
 		
 		JComboBox landshluti = new JComboBox(landshlutaList);
 		landshluti.setBounds(338, 16, 114, 22);
