@@ -1,9 +1,12 @@
 package hotelApp;
 import java.awt.EventQueue;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Window;
 
 import javax.swing.JFrame;
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Container;
 import java.awt.Dimension;
 
@@ -20,6 +23,7 @@ import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTable;
 import javax.swing.JList;
+import javax.swing.JOptionPane;
 import javax.swing.event.ChangeListener;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.event.ChangeEvent;
@@ -47,6 +51,7 @@ public class hotelFrame {
 	private DefaultTableModel model_2;
 	private static Object[] result;
 	private JButton btnBoka = new JButton("B\u00F3ka");
+	public static Afrit boka = new Afrit();
 	
 	/**
 	 * Launch the application.
@@ -132,6 +137,7 @@ public class hotelFrame {
 				
 			}
 		});
+		
 		frame.getContentPane().setLayout(null);
 		frame.getContentPane().add(btnBoka);
 		
@@ -458,6 +464,26 @@ public class hotelFrame {
 		msg.setBounds(30, 43, 177, 34);
 		frame.getContentPane().add(msg);
 		msg.setText("Welcome User:");
+		
+		
+		
+		JButton btnPrenta = new JButton("Print receipt");
+		btnPrenta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				/*				
+				try {
+					table_1.print();
+				}
+				catch(java.awt.print.PrinterException e) {
+					System.err.format("No printer found", e .getMessage());
+				}*/
+				
+				boka.setVisible(true);
+				
+			}
+		});
+		btnPrenta.setBounds(12, 174, 103, 23);
+		frame.getContentPane().add(btnPrenta);
 		
 		leit();
 		
