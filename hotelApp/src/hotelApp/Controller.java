@@ -4,11 +4,14 @@ public class Controller {
 	private HotelManager manager = new HotelManager();
 	/**
 	 * Notkun: controller.search(h)
-	 * Fyrir : h er hótel hlutur sem inniheldur leitar gögn
+	 * Fyrir : h er hï¿½tel hlutur sem inniheldur leitar gï¿½gn
 	 * @param h
-	 * @return Fylki af hótelum sem uppfylla leitarskylirði
+	 * @return Fylki af hï¿½telum sem uppfylla leitarskylirï¿½i
 	 */
 	public Object[] search(HotelLeit h) {
 		return manager.searchForHotelInDb(h);
-	}	
+	}
+	public void boka(String[] s) {
+		manager.bokaHotel(s);
+	}
 }

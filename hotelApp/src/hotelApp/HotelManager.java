@@ -13,4 +13,13 @@ public class HotelManager {
 			return new Object[] {"error"};
 		}
 	}
+	public void bokaHotel(String[] s) {
+		try {
+		manager.boka(manager.runBoka(s));
+		} catch (ClassNotFoundException e) {
+	 	// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
 }
