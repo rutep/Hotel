@@ -212,7 +212,7 @@ public class hotelFrame {
 		
 		
 		JCheckBox chckbxBreakfast = new JCheckBox("Breakfast");
-		chckbxBreakfast.setBounds(662, 147, 97, 23);
+		chckbxBreakfast.setBounds(662, 147, 89, 23);
 		chckbxBreakfast.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				if(chckbxBreakfast.isSelected()) {
