@@ -9,6 +9,5 @@
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/5"/>
 	<classpathentry kind="lib" path="src/lib/mysql-connector-java-5.1.45-bin.jar"/>
 	<classpathentry kind="lib" path="src/lib/sqlite-jdbc-3.21.0.jar"/>
-	<classpathentry kind="lib" path="C:/Skóli/Þróun hugbúnaðar/Hotel/hotelApp/src/lib/jcalendar-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
