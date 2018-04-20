@@ -154,15 +154,14 @@ public class hotelFrame {
 				
 				model_2 = (DefaultTableModel) table_1.getModel();
 				model_2.setColumnIdentifiers(new String[]
-						{"Name", "stars", "single room price" , "double room price", "suite price"});
+						{"Name", "Price", "Room type", "Address"});
 				
 				Hotel hotel_res = ((Hotel)result[rowIndex]); 
 				model_2.addRow(new String[]
-						{hotel_res.getName(), 
-						 hotel_res.getStars()+ "",
-						 hotel_res.getSinglePrice(),
-						 hotel_res.getDoublePrice(),
-						 hotel_res.getSuitePrice() });
+						{loginFrame.gestur.getName(),
+						 hotel_res.getSuitePrice(),
+						 "type",
+						 hotel_res.getAddress()});
 										
 				if(btnBoka.getText().equals("Bóka")) {
 					btnBoka.setText("Bókun staðfest");
