@@ -8,6 +8,7 @@ import javax.swing.JDialog;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 import java.awt.event.ActionListener;
+import java.awt.image.ImageProducer;
 import java.awt.event.ActionEvent;
 import javax.swing.JTextField;
 import javax.swing.JLabel;
@@ -80,7 +81,7 @@ public class Afrit extends JDialog {
 					public void actionPerformed(ActionEvent arg0) {
 						
 						
-					/*	try {
+						/*try {
 							contentPanel.print();
 						}
 						catch(java.awt.print.PrinterException e) {

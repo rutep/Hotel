@@ -48,7 +48,7 @@ public class loginFrame extends JFrame {
 			userExists.setText("");
 			return;
 		}
-		userExists.setText("User dose note exsist");
+		userExists.setText("User does not exist");
 	}
 
 	/**
