@@ -47,7 +47,7 @@ public class hotelFrame {
 	private JSlider slider;
 	private final ButtonGroup buttonGroup = new ButtonGroup();
 	private DefaultListModel model;
-	public static HotelLeit hotel = new HotelLeit();
+	private HotelLeit hotel = new HotelLeit();
 	private JTable table_1;
 	private DefaultTableModel model_2;
 	private static Object[] result;
