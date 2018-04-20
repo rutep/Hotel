@@ -34,7 +34,7 @@ import javax.swing.JComboBox;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JTextPane;
-import com.toedter.calendar.JDateChooser;
+//import com.toedter.calendar.JDateChooser;
 
 public class hotelFrame {
 	
@@ -67,7 +67,9 @@ public class hotelFrame {
 	}
 	
 	private void leit() {
-
+		if(btnBoka.getText().equals("Bókun staðfest")) {
+			btnBoka.setText("Bóka");
+		}
 		hotel.setName(searchField.getText());
 		Object[] res = controller.search(hotel);
 		result = res;
@@ -111,13 +113,13 @@ public class hotelFrame {
 
 		btnBoka.setEnabled(true);
 		
-		JDateChooser dateChooser = new JDateChooser();
-		dateChooser.setBounds(12, 143, 89, 20);
-		frame.getContentPane().add(dateChooser);
+	//	JDateChooser dateChooser = new JDateChooser();
+	//	dateChooser.setBounds(12, 143, 89, 20);
+	//	frame.getContentPane().add(dateChooser);
 		
-		JDateChooser dateChooser_1 = new JDateChooser();
-		dateChooser_1.setBounds(111, 143, 96, 20);
-		frame.getContentPane().add(dateChooser_1);
+	//	JDateChooser dateChooser_1 = new JDateChooser();
+	//	dateChooser_1.setBounds(111, 143, 96, 20);
+	//	frame.getContentPane().add(dateChooser_1);
 		
 	}
 	
@@ -128,7 +130,7 @@ public class hotelFrame {
 	private void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(new Color(240, 230, 140));
-		btnBoka.setBounds(221, 98, 109, 49);
+		btnBoka.setBounds(12, 113, 129, 49);
 		
 		
 		btnBoka.addActionListener(new ActionListener() {
@@ -155,9 +157,14 @@ public class hotelFrame {
 						 hotel_res.getSinglePrice(),
 						 hotel_res.getDoublePrice(),
 						 hotel_res.getSuitePrice() });
+								
 				
-				btnBoka.setEnabled(false);
-				btnPrenta.setEnabled(true);
+				if(btnBoka.getText().equals("Bóka")) {
+					btnBoka.setText("Bókun staðfest");
+					btnPrenta.setEnabled(true);
+					btnBoka.setEnabled(false);
+				}
+				
 				// ********************************************
 				//Hér þarf að birta niðurstöður í result glugga
 				
