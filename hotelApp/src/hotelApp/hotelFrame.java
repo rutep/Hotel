@@ -34,6 +34,7 @@ import javax.swing.JComboBox;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import javax.swing.JTextPane;
+import com.toedter.calendar.JDateChooser;
 
 public class hotelFrame {
 	
@@ -109,6 +110,14 @@ public class hotelFrame {
 		}
 
 		btnBoka.setEnabled(true);
+		
+		JDateChooser dateChooser = new JDateChooser();
+		dateChooser.setBounds(12, 143, 89, 20);
+		frame.getContentPane().add(dateChooser);
+		
+		JDateChooser dateChooser_1 = new JDateChooser();
+		dateChooser_1.setBounds(111, 143, 96, 20);
+		frame.getContentPane().add(dateChooser_1);
 		
 	}
 	
