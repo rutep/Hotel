@@ -134,7 +134,7 @@ public class DbManager {
 			
 			Statement statement = connection.createStatement();
 			statement.setQueryTimeout(30);  // set timeout to 30 sec.
-			ResultSet resultSet = statement.executeQuery(s);
+			statement.executeUpdate(s);
 		}
 		catch(SQLException e){  System.err.println(e.getMessage()); }       
 		finally {         
