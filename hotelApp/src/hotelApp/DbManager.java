@@ -106,6 +106,39 @@ public class DbManager {
 		}
 		return vec.toArray();
 	}
+	public String runBoka(String[] s) {
+		return "INSERT INTO PERSON VALUES ('" + s[0] + "','" + s[1] + "'," + s[2] + "," + s[3] + ");";
+	}
+		
+	
+	public void boka(String s)  throws ClassNotFoundException { {
+		// load the sqlite-JDBC driver using the current class loader
+		Class.forName("org.sqlite.JDBC");
+		Connection connection = null;
+		Vector<Object> vec = new Vector<Object>();
+		try
+		{
+			System.out.println(s);
+			// create a database connection
+			connection = DriverManager.getConnection("jdbc:sqlite:hotelDataBase.db");
+			
+			Statement statement = connection.createStatement();
+			statement.setQueryTimeout(30);  // set timeout to 30 sec.
+			ResultSet resultSet = statement.executeQuery(s);
+		}
+		catch(SQLException e){  System.err.println(e.getMessage()); }       
+		finally {         
+			try {
+				if(connection != null)
+					connection.close();  
+			}
+			catch(SQLException e) {  // Use SQLException class instead.          
+				System.err.println(e); 
+			}
+		}
+		
+	}
+}
 }
 
 
