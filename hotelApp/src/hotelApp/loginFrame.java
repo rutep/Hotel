@@ -45,6 +45,7 @@ public class loginFrame extends JFrame {
 		if(NewUserFrame.checkGuest(name, ssn)) {
 			frame.setVisible(false);
 			window.setVisible(true);
+			hotelFrame.lblWelcome.setText(loginFrame.gestur.getName());		
 			userExists.setText("");
 			return;
 		}

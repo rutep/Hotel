@@ -38,7 +38,7 @@ import javax.swing.JTextPane;
 
 public class hotelFrame {
 	
-	
+	static JLabel lblWelcome = new JLabel();
 	private JFrame frame;
 	private JTextField searchField;
 	private JTextField textField;
@@ -106,20 +106,14 @@ public class hotelFrame {
 				loginFrame.frame.setVisible(true);
 			}
 		});
-		logout.setBounds(12, 11, 117, 25);
+		logout.setBounds(12, 15, 117, 25);
 		frame.getContentPane().add(logout);
 		
+
 		JLabel lblChooseRoom = new JLabel("Choose room:");
 		lblChooseRoom.setBounds(139, 16, 76, 24);
 		frame.getContentPane().add(lblChooseRoom);
-		
-	//	JDateChooser dateChooser = new JDateChooser();
-	//	dateChooser.setBounds(12, 143, 89, 20);
-	//	frame.getContentPane().add(dateChooser);
-		
-	//	JDateChooser dateChooser_1 = new JDateChooser();
-	//	dateChooser_1.setBounds(111, 143, 96, 20);
-	//	frame.getContentPane().add(dateChooser_1);
+	
 		
 	}
 	
@@ -506,15 +500,16 @@ public class hotelFrame {
 		});
 		
 		
-		JLabel lblWelcome = new JLabel( /* loginFrame.gestur.getName() */ "");
-		lblWelcome.setBounds(12, 67, 177, 34);
-		frame.getContentPane().add(lblWelcome);
-		lblWelcome.setText(loginFrame.gestur.getName());		
-		
 		JLabel msg = new JLabel("New label");
-		msg.setBounds(12, 50, 177, 34);
+		msg.setBounds(12, 44, 177, 23);
 		frame.getContentPane().add(msg);
 		msg.setText("Welcome User:");
+		
+		
+		
+		lblWelcome.setBounds(12, 67, 177, 34);
+		frame.getContentPane().add(lblWelcome);
+		
 		
 		leit();
 		
