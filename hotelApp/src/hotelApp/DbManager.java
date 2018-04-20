@@ -10,9 +10,13 @@ import java.util.Vector;
 
 public class DbManager {
 	
+	/**
+	 * Fall sem sér um alla leit og skilar hótelum með þeim leitarskilirðum
+	 * @param HotelLeit s hlutur sem inniheldur leitar upplísingar
+	 * @return
+	 */
 	public String makeSearchQuery(HotelLeit s){
 		
-		 // *************************** Haukur ******************************************
 		 String name = s.getName();
 		 String vegan, swimmingPool,breakfast,freeWifi,spa,handiCappedAcc,gym,carParking,
 		 pets,landshluti,stars,herbergisTeg,sort,flokkaHvad,flokkaHvernig;

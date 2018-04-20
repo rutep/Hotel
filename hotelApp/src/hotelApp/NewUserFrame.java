@@ -18,6 +18,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 
+/**
+ * Bókunar rammi sem sér um að skrá nýjan notenda í kerfið.
+ */
+
 public class NewUserFrame extends JFrame {
 
 	private JPanel contentPane;
@@ -27,17 +31,28 @@ public class NewUserFrame extends JFrame {
 	JFormattedTextField inpUser = new JFormattedTextField();
 	JLabel msg = new JLabel("");
 	
+	
+	/**
+	 * Notkun: checkGuest(n, ssn)
+	 * @param String n
+	 * @param String ssn
+	 * @return true  ef notendandi er til annars false
+	 */
 	static boolean checkGuests(String n, String ssn) {
-		
 		for (int i = 0; i <= guestIndex; i++) {
 			if(guest[i].getName().equals(n) || guest[i].getSsn().equals(ssn)) {
 				return true;
 			}
 		}
-		
 		return false;
 	}
 	
+	/**
+	 * Notkun: bokun()
+	 * Fyrir:
+	 * Eftir: Búið er að ná í gögn úr texta field og ath 
+	 * 		: Ef gögn standast skorður þá hefur ný notandi verið skráður
+	 */
 	public void bokun() {
 		String user = inpUser.getText();
 		String ssn = inpSsn.getText();
@@ -84,7 +99,9 @@ public class NewUserFrame extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
-		
+		/**
+		 * Leifir að íta á enter fyrir inp
+		 */
 		inpUser.addKeyListener(new KeyAdapter() {
 			@Override
 			public void keyPressed(KeyEvent arg0) {
@@ -93,7 +110,7 @@ public class NewUserFrame extends JFrame {
 				}
 			}
 		});
-		inpUser.setBounds(185, 82, 119, 26);
+		inpUser.setBounds(226, 82, 119, 26);
 		contentPane.add(inpUser);
 		inpSsn.addKeyListener(new KeyAdapter() {
 			@Override
@@ -105,15 +122,15 @@ public class NewUserFrame extends JFrame {
 		});
 		
 		
-		inpSsn.setBounds(185, 118, 119, 26);
+		inpSsn.setBounds(226, 118, 119, 26);
 		contentPane.add(inpSsn);
 		
-		JLabel lblNewLabel = new JLabel("New user");
-		lblNewLabel.setBounds(75, 87, 92, 15);
+		JLabel lblNewLabel = new JLabel("New user:");
+		lblNewLabel.setBounds(136, 87, 72, 15);
 		contentPane.add(lblNewLabel);
 		
-		JLabel lblNewLabel_1 = new JLabel("ssn");
-		lblNewLabel_1.setBounds(75, 123, 92, 15);
+		JLabel lblNewLabel_1 = new JLabel("Social security number:");
+		lblNewLabel_1.setBounds(42, 123, 166, 15);
 		contentPane.add(lblNewLabel_1);
 		
 		
