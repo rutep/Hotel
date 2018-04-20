@@ -51,7 +51,7 @@ public class hotelFrame {
 	private DefaultTableModel model_2;
 	private static Object[] result;
 	private JButton btnBoka = new JButton("B\u00F3ka");
-	public static Afrit boka = new Afrit();
+	private JButton btnPrenta = new JButton("Print receipt");
 	
 	/**
 	 * Launch the application.
@@ -71,6 +71,22 @@ public class hotelFrame {
 		Object[] res = controller.search(hotel);
 		result = res;
 		searchField.setText("");
+		
+		btnPrenta.setEnabled(false);
+		btnPrenta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					table_1.print();
+				}
+				catch(java.awt.print.PrinterException e) {
+					System.err.format("No printer found", e .getMessage());
+				}
+								
+			}
+		});
+		btnPrenta.setBounds(12, 174, 129, 23);
+		frame.getContentPane().add(btnPrenta);
 		
 		DefaultTableModel dtm = new DefaultTableModel(0, 0) {
 		    public boolean isCellEditable(int row, int column) {
@@ -132,6 +148,7 @@ public class hotelFrame {
 						 hotel_res.getSuitePrice() });
 				
 				btnBoka.setEnabled(false);
+				btnPrenta.setEnabled(true);
 				// ********************************************
 				//Hér þarf að birta niðurstöður í result glugga
 				
@@ -466,28 +483,7 @@ public class hotelFrame {
 		frame.getContentPane().add(msg);
 		msg.setText("Welcome User:");
 		
-		
-		
-		JButton btnPrenta = new JButton("Print receipt");
-		btnPrenta.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				/*				
-				try {
-					table_1.print();
-				}
-				catch(java.awt.print.PrinterException e) {
-					System.err.format("No printer found", e .getMessage());
-				}*/
-				
-				boka.setVisible(true);
-				
-			}
-		});
-		btnPrenta.setBounds(12, 174, 103, 23);
-		frame.getContentPane().add(btnPrenta);
-		
 		leit();
-		
 		
 	}
 
