@@ -174,7 +174,8 @@ public class hotelFrame {
 					btnPrenta.setEnabled(true);
 					btnBoka.setEnabled(false);
 				}
-				
+				// senda bokun i gagnagrunn
+//				controller.boka(s);
 				// ********************************************
 				//Hér þarf að birta niðurstöður í result glugga
 				
