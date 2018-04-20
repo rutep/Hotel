@@ -69,9 +69,9 @@ public class NewUserFrame extends JFrame {
 			msg.setText("User exists try another user");
 			return;
 		}
-		if(user.length() < 5) {
+		if(user.length() < 1) {
 			msg.setText("");
-			msg.setText("User name must be larger then five characters");
+			msg.setText("User name must be larger then one character");
 			return;
 		}
 		if(ssn.length() < 3) {
