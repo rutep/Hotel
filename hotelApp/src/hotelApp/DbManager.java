@@ -110,8 +110,10 @@ public class DbManager {
 		}
 		return vec.toArray();
 	}
-	public String runBoka(String[] s) {
-		return "INSERT INTO PERSON VALUES ('" + s[0] + "','" + s[1] + "'," + s[2] + "," + s[3] + ");";
+	public String runBoka(RoomReservation s) {
+		return "";
+		
+		//return "INSERT INTO PERSON VALUES ('" + s[0] + "','" + s[1] + "'," + s[2] + "," + s[3] + ");";
 	}
 		
 	
