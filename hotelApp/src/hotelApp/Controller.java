@@ -11,7 +11,7 @@ public class Controller {
 	public Object[] search(HotelLeit h) {
 		return manager.searchForHotelInDb(h);
 	}
-	public void boka(String[] s) {
+	public void boka(RoomReservation s) {
 		manager.bokaHotel(s);
 	}
 }

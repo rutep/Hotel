@@ -1,6 +1,14 @@
 package hotelApp;
 
 public class RoomReservation {
+	
+	Hotel hotel;
+	Guest guest;
+	
+	public RoomReservation(Hotel h, Guest g) {
+		hotel = h;
+		guest = g;
+	}
 
 	public int daysBooked() {
 		
@@ -12,7 +20,12 @@ public class RoomReservation {
 		return guestBooked();
 	}
 	
-	private int hotelId() {
-		return hotelId();
+	public Hotel getHotel() {
+		return hotel;
 	}
+	
+	public Guest getGuest() {
+		return guest;
+	}
+
 }

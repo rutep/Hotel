@@ -76,20 +76,6 @@ public class hotelFrame {
 		searchField.setText("");
 		
 		btnPrenta.setEnabled(false);
-		btnPrenta.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent arg0) {
-				
-				try {
-					table_1.print();
-				}
-				catch(java.awt.print.PrinterException e) {
-					System.err.format("No printer found", e .getMessage());
-				}
-								
-			}
-		});
-		btnPrenta.setBounds(12, 174, 129, 23);
-		frame.getContentPane().add(btnPrenta);
 		
 		DefaultTableModel dtm = new DefaultTableModel(0, 0) {
 		    public boolean isCellEditable(int row, int column) {
@@ -142,6 +128,22 @@ public class hotelFrame {
 		frame.getContentPane().setBackground(new Color(240, 230, 140));
 		btnBoka.setBounds(12, 113, 129, 49);
 		
+		btnPrenta.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent arg0) {
+				
+				try {
+					table_1.print();
+				}
+				catch(java.awt.print.PrinterException e) {
+					System.err.format("No printer found", e .getMessage());
+				}
+								
+			}
+		});
+		btnPrenta.setBounds(12, 174, 129, 23);
+		frame.getContentPane().add(btnPrenta);
+
+		
 		
 		btnBoka.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
@@ -167,15 +169,15 @@ public class hotelFrame {
 						 hotel_res.getSinglePrice(),
 						 hotel_res.getDoublePrice(),
 						 hotel_res.getSuitePrice() });
-								
-				
+										
 				if(btnBoka.getText().equals("Bóka")) {
 					btnBoka.setText("Bókun staðfest");
 					btnPrenta.setEnabled(true);
 					btnBoka.setEnabled(false);
 				}
 				// senda bokun i gagnagrunn
-//				controller.boka(s);
+				RoomReservation reservation = new RoomReservation(hotel_res,loginFrame.gestur);	
+				controller.boka(reservation);
 				// ********************************************
 				//Hér þarf að birta niðurstöður í result glugga
 				

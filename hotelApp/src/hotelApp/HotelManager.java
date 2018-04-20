@@ -13,7 +13,7 @@ public class HotelManager {
 			return new Object[] {"error"};
 		}
 	}
-	public void bokaHotel(String[] s) {
+	public void bokaHotel(RoomReservation s) {
 		try {
 		manager.boka(manager.runBoka(s));
 		} catch (ClassNotFoundException e) {
