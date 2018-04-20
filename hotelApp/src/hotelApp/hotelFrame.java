@@ -109,7 +109,11 @@ public class hotelFrame {
 		logout.setBounds(12, 15, 117, 25);
 		frame.getContentPane().add(logout);
 		
-		
+
+		JLabel lblChooseRoom = new JLabel("Choose room:");
+		lblChooseRoom.setBounds(139, 16, 76, 24);
+		frame.getContentPane().add(lblChooseRoom);
+	
 		
 	}
 	
@@ -169,7 +173,7 @@ public class hotelFrame {
 					btnBoka.setEnabled(false);
 				}
 				// senda bokun i gagnagrunn
-				RoomReservation reservation = new RoomReservation(hotel_res,loginFrame.gestur);	
+				RoomReservation reservation = new RoomReservation(hotel_res,loginFrame.gestur,hotel.getHerbergisTeg());	
 				controller.boka(reservation);
 				// ********************************************
 				//Hér þarf að birta niðurstöður í result glugga
