@@ -109,6 +109,10 @@ public class hotelFrame {
 		logout.setBounds(12, 11, 117, 25);
 		frame.getContentPane().add(logout);
 		
+		JLabel lblChooseRoom = new JLabel("Choose room:");
+		lblChooseRoom.setBounds(139, 16, 76, 24);
+		frame.getContentPane().add(lblChooseRoom);
+		
 	//	JDateChooser dateChooser = new JDateChooser();
 	//	dateChooser.setBounds(12, 143, 89, 20);
 	//	frame.getContentPane().add(dateChooser);
