@@ -69,7 +69,6 @@ public class loginFrame extends JFrame {
 				
 				gestur.setName(name);
 				gestur.setSsn(ssn);
-				System.out.println(name + ", " + ssn);
 				frame.setVisible(false);
 				window.setVisible(true);
 			}

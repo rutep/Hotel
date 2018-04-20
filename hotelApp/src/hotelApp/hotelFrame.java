@@ -128,7 +128,7 @@ public class hotelFrame {
 				
 				btnBoka.setEnabled(false);
 				// ********************************************
-				//H�r �arf a� birta ni�urst��ur um b�kun / rafr�n kvittun
+				//Hér þarf að birta niðurstöður í result glugga
 				
 			}
 		});
@@ -246,7 +246,8 @@ public class hotelFrame {
 		frame.getContentPane().add(lblMinimumStars);
 		
 		textField = new JTextField();
-		textField.setBounds(630, 113, 202, 20);
+		textField.setEditable(false);
+		textField.setBounds(632, 113, 200, 20);
 
 		textField.setText("1            2             3              4                5");
 
@@ -459,6 +460,7 @@ public class hotelFrame {
 		msg.setText("Welcome User:");
 		
 		leit();
+		
 		
 	}
 
