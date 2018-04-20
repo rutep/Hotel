@@ -88,7 +88,6 @@ public class NewUserFrame extends JFrame {
 		Guest tmpGuest = new Guest();
 		tmpGuest.setName(user);
 		tmpGuest.setSsn(ssn);
-		System.out.println(guest.length + " " + guestIndex);
 		guestIndex++;
 		guest[guestIndex] = tmpGuest;
 		inpUser.setText("");

@@ -158,7 +158,7 @@ public class hotelFrame {
 				
 				model_2 = (DefaultTableModel) table_1.getModel();
 				model_2.setColumnIdentifiers(new String[]
-						{"Name", "Price", "Room type", "Address"});
+						{"Name", "Price", "Room type", "Hotel name", "Address"});
 				
 				String price = "";
 				String type = "";
@@ -182,6 +182,7 @@ public class hotelFrame {
 						{loginFrame.gestur.getName(),
 						price,
 						 type,
+						 hotel_res.getName(),
 						 hotel_res.getAddress(),
 						 });
 										
